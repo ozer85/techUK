@@ -1,104 +1,104 @@
-var all_data = [ {region:"#heatmap-em", overallRank:7,"#skills-spider":7,"#adoption-spider":6,"#infra-spider":3,"#research-spider":8,"#finance-spider":12,"#trade-spider":4, name: "East Midlands"},
-						{region:"#heatmap-ee", overallRank:3,"#skills-spider":4,"#adoption-spider":3,"#infra-spider":8,"#research-spider":3,"#finance-spider":2,"#trade-spider":5, name: "East of England"},
-						{region:"#heatmap-ldn", overallRank:1,"#skills-spider":1,"#adoption-spider":1,"#infra-spider":1,"#research-spider":2,"#finance-spider":1,"#trade-spider":9, name: "Greater London"},
-						{region:"#heatmap-ne", overallRank:10,"#skills-spider":11,"#adoption-spider":11,"#infra-spider":7,"#research-spider":11,"#finance-spider":7,"#trade-spider":8, name: "North East"},
-						{region:"#heatmap-nw", overallRank:4,"#skills-spider":6,"#adoption-spider":4,"#infra-spider":4,"#research-spider":4,"#finance-spider":4,"#trade-spider":10, name: "North West"},
-						{region:"#heatmap-ni", overallRank:12,"#skills-spider":12,"#adoption-spider":5,"#infra-spider":12,"#research-spider":12,"#finance-spider":8,"#trade-spider":1, name: "Northern Ireland"},
-						{region:"#heatmap-s", overallRank:9,"#skills-spider":8,"#adoption-spider":10,"#infra-spider":10,"#research-spider":6,"#finance-spider":5,"#trade-spider":7, name: "Scotland"},
-						{region:"#heatmap-se", overallRank:2,"#skills-spider":2,"#adoption-spider":2,"#infra-spider":5,"#research-spider":1,"#finance-spider":3,"#trade-spider":2, name: "South East"},
-						{region:"#heatmap-sw", overallRank:6,"#skills-spider":3,"#adoption-spider":8,"#infra-spider":9,"#research-spider":7,"#finance-spider":6,"#trade-spider":6, name: "South West"},
-						{region:"#heatmap-w", overallRank:11,"#skills-spider":10,"#adoption-spider":12,"#infra-spider":11,"#research-spider":10,"#finance-spider":10,"#trade-spider":11, name: "Wales"},
-						{region:"#heatmap-wm", overallRank:5,"#skills-spider":5,"#adoption-spider":9,"#infra-spider":2,"#research-spider":5,"#finance-spider":9,"#trade-spider":3, name: "West Midlands"},
-						{region:"#heatmap-yh", overallRank:8,"#skills-spider":9,"#adoption-spider":7,"#infra-spider":6,"#research-spider":9,"#finance-spider":11,"#trade-spider":12, name: "Yorkshire & The Humber"}
+var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adoption-spider":9,"#infra-spider":5,"#research-spider":6,"#finance-spider":12,"#trade-spider":4, name: "East Midlands"},
+						{region:"#heatmap-ee", overallRank:2,"#skills-spider":3,"#adoption-spider":3,"#infra-spider":9,"#research-spider":1,"#finance-spider":4,"#trade-spider":5, name: "East of England"},
+						{region:"#heatmap-ldn", overallRank:1,"#skills-spider":1,"#adoption-spider":1,"#infra-spider":1,"#research-spider":11,"#finance-spider":1,"#trade-spider":7, name: "Greater London"},
+						{region:"#heatmap-ne", overallRank:8,"#skills-spider":8,"#adoption-spider":11,"#infra-spider":7,"#research-spider":4,"#finance-spider":8,"#trade-spider":9, name: "North East"},
+						{region:"#heatmap-nw", overallRank:7,"#skills-spider":6,"#adoption-spider":5,"#infra-spider":3,"#research-spider":7,"#finance-spider":6,"#trade-spider":10, name: "North West"},
+						{region:"#heatmap-ni", overallRank:4,"#skills-spider":11,"#adoption-spider":4,"#infra-spider":8,"#research-spider":8,"#finance-spider":2,"#trade-spider":1, name: "Northern Ireland"},
+						{region:"#heatmap-s", overallRank:9,"#skills-spider":9,"#adoption-spider":6,"#infra-spider":10,"#research-spider":5,"#finance-spider":10,"#trade-spider":8, name: "Scotland"},
+						{region:"#heatmap-se", overallRank:3,"#skills-spider":2,"#adoption-spider":2,"#infra-spider":6,"#research-spider":2,"#finance-spider":5,"#trade-spider":2, name: "South East"},
+						{region:"#heatmap-sw", overallRank:6,"#skills-spider":4,"#adoption-spider":7,"#infra-spider":11,"#research-spider":9,"#finance-spider":3,"#trade-spider":6, name: "South West"},
+						{region:"#heatmap-w", overallRank:12,"#skills-spider":12,"#adoption-spider":12,"#infra-spider":12,"#research-spider":12,"#finance-spider":9,"#trade-spider":12, name: "Wales"},
+						{region:"#heatmap-wm", overallRank:5,"#skills-spider":5,"#adoption-spider":10,"#infra-spider":2,"#research-spider":3,"#finance-spider":7,"#trade-spider":3, name: "West Midlands"},
+						{region:"#heatmap-yh", overallRank:11,"#skills-spider":10,"#adoption-spider":8,"#infra-spider":4,"#research-spider":10,"#finance-spider":11,"#trade-spider":11, name: "Yorkshire & The Humber"}
 					]
 		var skillsSpider = [[
-			{axis: "Scotland", value: 8},
-			{axis: "North East", value: 11},
-			{axis: "Yorkshire & the Humber", value: 9},
+			{axis: "Scotland", value: 9},
+			{axis: "North East", value: 8},
+			{axis: "Yorkshire & the Humber", value: 10},
 			{axis: "East Midlands", value: 7},
-			{axis: "East of England", value: 4},
-			{axis: "Greater London", value: 1},
-			{axis: "South East", value: 2},
-			{axis: "South West", value: 3},
-			{axis: "West Midlands", value: 5},
-			{axis: "Wales", value: 10},
-			{axis: "North West", value: 6},
-			{axis: "Northern Ireland", value: 12}
-		]]
-
-		var adoptionSpider = [[
-			{axis: "Scotland", value: 10},
-			{axis: "North East", value: 11},
-			{axis: "Yorkshire & the Humber", value: 7},
-			{axis: "East Midlands", value: 6},
 			{axis: "East of England", value: 3},
 			{axis: "Greater London", value: 1},
 			{axis: "South East", value: 2},
-			{axis: "South West", value: 8},
-			{axis: "West Midlands", value: 9},
+			{axis: "South West", value: 4},
+			{axis: "West Midlands", value: 5},
 			{axis: "Wales", value: 12},
-			{axis: "North West", value: 4},
-			{axis: "Northern Ireland", value: 5}
+			{axis: "North West", value: 6},
+			{axis: "Northern Ireland", value: 11}
+		]]
+
+		var adoptionSpider = [[
+			{axis: "Scotland", value: 6},
+			{axis: "North East", value: 11},
+			{axis: "Yorkshire & the Humber", value: 8},
+			{axis: "East Midlands", value: 9},
+			{axis: "East of England", value: 3},
+			{axis: "Greater London", value: 1},
+			{axis: "South East", value: 2},
+			{axis: "South West", value: 7},
+			{axis: "West Midlands", value: 10},
+			{axis: "Wales", value: 12},
+			{axis: "North West", value: 5},
+			{axis: "Northern Ireland", value: 4}
 		]]
 
 		var InfrastructureSpider = [[
 			{axis: "Scotland", value: 10},
 			{axis: "North East", value: 7},
-			{axis: "Yorkshire & the Humber", value: 6},
-			{axis: "East Midlands", value: 3},
-			{axis: "East of England", value: 8},
+			{axis: "Yorkshire & the Humber", value: 4},
+			{axis: "East Midlands", value: 5},
+			{axis: "East of England", value: 9},
 			{axis: "Greater London", value: 1},
-			{axis: "South East", value: 5},
+			{axis: "South East", value: 6},
 			{axis: "South West", value: 11},
 			{axis: "West Midlands", value: 2},
-			{axis: "Wales", value: 11},
-			{axis: "North West", value: 4},
-			{axis: "Northern Ireland", value: 12}
+			{axis: "Wales", value: 12},
+			{axis: "North West", value: 3},
+			{axis: "Northern Ireland", value: 8}
 		]]
 
 		var ResearchSpider = [[
-			{axis: "Scotland", value: 6},
-			{axis: "North East", value: 11},
-			{axis: "Yorkshire & the Humber", value: 9},
-			{axis: "East Midlands", value: 8},
-			{axis: "East of England", value: 3},
-			{axis: "Greater London", value: 2},
-			{axis: "South East", value: 1},
-			{axis: "South West", value: 7},
-			{axis: "West Midlands", value: 5},
-			{axis: "Wales", value: 10},
-			{axis: "North West", value: 4},
-			{axis: "Northern Ireland", value: 12}
+			{axis: "Scotland", value: 5},
+			{axis: "North East", value: 4},
+			{axis: "Yorkshire & the Humber", value: 10},
+			{axis: "East Midlands", value: 6},
+			{axis: "East of England", value: 1},
+			{axis: "Greater London", value: 11},
+			{axis: "South East", value: 2},
+			{axis: "South West", value: 9},
+			{axis: "West Midlands", value: 3},
+			{axis: "Wales", value: 12},
+			{axis: "North West", value: 7},
+			{axis: "Northern Ireland", value: 8}
 		]]
 
 		var TradeSpider = [[
-			{axis: "Scotland", value: 7},
-			{axis: "North East", value: 8},
-			{axis: "Yorkshire & the Humber", value: 12},
+			{axis: "Scotland", value: 8},
+			{axis: "North East", value: 9},
+			{axis: "Yorkshire & the Humber", value: 11},
 			{axis: "East Midlands", value: 4},
 			{axis: "East of England", value: 5},
-			{axis: "Greater London", value: 9},
+			{axis: "Greater London", value: 7},
 			{axis: "South East", value: 2},
 			{axis: "South West", value: 6},
 			{axis: "West Midlands", value: 3},
-			{axis: "Wales", value: 11},
+			{axis: "Wales", value: 12},
 			{axis: "North West", value: 10},
 			{axis: "Northern Ireland", value: 1}
 		]]
 
 		var FinanceSpider = [[
-			{axis: "Scotland", value: 5},
-			{axis: "North East", value: 7},
+			{axis: "Scotland", value: 10},
+			{axis: "North East", value: 8},
 			{axis: "Yorkshire & the Humber", value: 11},
 			{axis: "East Midlands", value: 12},
-			{axis: "East of England", value: 2},
+			{axis: "East of England", value: 4},
 			{axis: "Greater London", value: 1},
-			{axis: "South East", value: 3},
-			{axis: "South West", value: 6},
-			{axis: "West Midlands", value: 9},
-			{axis: "Wales", value: 10},
-			{axis: "North West", value: 4},
-			{axis: "Northern Ireland", value: 8}
+			{axis: "South East", value: 5},
+			{axis: "South West", value: 3},
+			{axis: "West Midlands", value: 7},
+			{axis: "Wales", value: 9},
+			{axis: "North West", value: 6},
+			{axis: "Northern Ireland", value: 2}
 		]]
 
 
