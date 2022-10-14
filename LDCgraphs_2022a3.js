@@ -298,8 +298,8 @@ var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adop
 				$('#heatmap-svg').attr("height", y + i);
 				$('#heatmap-svg').width();
 				setTimeout(function(){
-					console.log("t");
-				},50);
+					return
+				},500);
 			}
 		}
 
