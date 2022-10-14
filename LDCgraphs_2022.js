@@ -1,31 +1,4 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@ozer85 
-ozer85
-/
-techuk
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-techuk/graphs_v2.js /
-@ozer85
-ozer85 Rename graphs.js to graphs_v2.js
-Latest commit c755099 on 7 Sep 2021
- History
- 1 contributor
-633 lines (567 sloc)  22.2 KB
+import * as NUTS2svgs from 'NUTS2svgs.js';
 
 var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adoption-spider":9,"#infra-spider":5,"#research-spider":6,"#finance-spider":12,"#trade-spider":4, name: "East Midlands"},
 						{region:"#heatmap-ee", overallRank:2,"#skills-spider":3,"#adoption-spider":3,"#infra-spider":9,"#research-spider":1,"#finance-spider":4,"#trade-spider":5, name: "East of England"},
