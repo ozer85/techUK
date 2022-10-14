@@ -299,7 +299,7 @@ var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adop
 			for (let i=0; i < 500; i++){
 				$('#heatmap-svg').attr("width", x + i);
 				$('#heatmap-svg').attr("height", y + i);
-				await sleep(50);
+				await sleep(1);
 			}
 		}
 
