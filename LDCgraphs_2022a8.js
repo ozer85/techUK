@@ -293,7 +293,7 @@ var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adop
 		}
 
 
-		function zoomToLocation (x,y,z){
+		const zoomToLocation = async (x,y,z) =>{
 			x = $('#heatmap-svg').width();
 			y = $('#heatmap-svg').height();
 			for (let i=0; i < 500; i++){
