@@ -288,17 +288,21 @@ var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adop
 			}
 		}
 
+		const sleep = (time) => {
+		  return new Promise((resolve) => setTimeout(resolve, time))
+		}
+
+
 		function zoomToLocation (x,y,z){
 			x = $('#heatmap-svg').width();
 			y = $('#heatmap-svg').height();
 			for (let i=0; i < 500; i++){
 				$('#heatmap-svg').attr("width", x + i);
 				$('#heatmap-svg').attr("height", y + i);
-				setTimeout(function(){
-					console.log(i);
-				},500);
+				await sleep(50);
 			}
 		}
+
 
 		function mapClickHandler(element_id) {
 			zoomToLocation(1,1,1);
