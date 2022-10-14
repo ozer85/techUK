@@ -296,7 +296,7 @@ var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adop
 		const zoomToLocation = async (x,y,z) =>{
 			x = $('#heatmap-svg').width();
 			y = $('#heatmap-svg').height();
-			for (let i=0; i < 500; i+=2){
+			for (let i=0; i < 500; i+=5){
 				$('#heatmap-svg').attr("width", x + i);
 				$('#heatmap-svg').attr("height", y + i);
 				await sleep(1);
