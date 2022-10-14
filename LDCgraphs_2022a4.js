@@ -291,14 +291,13 @@ var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adop
 		function zoomToLocation (x,y,z){
 			x = $('#heatmap-svg').width();
 			y = $('#heatmap-svg').height();
-			i = 0;
-			while (i < 500){
+			while (let i=0 < 500){
 				i++;
 				$('#heatmap-svg').attr("width", x + i);
 				$('#heatmap-svg').attr("height", y + i);
 				$('#heatmap-svg').width();
 				setTimeout(function(){
-					return
+					i += 0;
 				},500);
 			}
 		}
