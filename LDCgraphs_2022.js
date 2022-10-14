@@ -1,5 +1,5 @@
 //import * as NUTS2svgs from 'NUTS2svgs.js';
-const NUTS2svgs = require('NUTS2svgs.js')
+const NUTS2svgs = require('NUTS2svgs.js');
 
 var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adoption-spider":9,"#infra-spider":5,"#research-spider":6,"#finance-spider":12,"#trade-spider":4, name: "East Midlands"},
 						{region:"#heatmap-ee", overallRank:2,"#skills-spider":3,"#adoption-spider":3,"#infra-spider":9,"#research-spider":1,"#finance-spider":4,"#trade-spider":5, name: "East of England"},
