@@ -633,18 +633,3 @@ $(window).on('resize', function(){
 
 			all_data.sort((a, b) => (a.overallRank > b.overallRank) ? 1 : -1)
 			buildDatatable(all_data)
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-techuk/graphs_v2.js at main · ozer85/techuk
