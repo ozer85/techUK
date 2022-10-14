@@ -299,7 +299,7 @@ var all_data = [ {region:"#heatmap-em", overallRank:10,"#skills-spider":7,"#adop
 				$('#heatmap-svg').width()
 				setTimeout(function(){
 					
-				},10);
+				},50);
 			}
 		}
 
