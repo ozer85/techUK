@@ -143,6 +143,9 @@ function buildDatatable(data) {
         tableHtml += `<tr><td>${i + 1}</td><td>${data[i].region}</td>`
         for (let k in allMetrics) {
             if (!selectedMetrics.includes(k)) {
+                console.log(k);
+                console.log(data[i]);
+                console.log(data[i][k]);
                 tableHtml += `<td>${data[i][k]}</td>`
             }
         }
