@@ -134,7 +134,7 @@ var selectedRegions = []
 var selectedMetrics = []
 let selectedLevel = 2;
 
-const allMetrics = ['overallRank', 'skillsRank', 'adoptionRank', 'InfrastructureRank', 'FinanceRank', 'ResearchRank', 'TradeRank'];
+const allMetrics = ['skillsRank', 'adoptionRank', 'InfrastructureRank', 'FinanceRank', 'ResearchRank', 'TradeRank'];
 
 function buildDatatable(data) {
     
