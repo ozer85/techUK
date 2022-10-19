@@ -130,46 +130,19 @@ const nuts1data = [
     {region: 'Yorkshire & the Humber', overallRank:9, skillsRank:9, adoptionRank:10, InfrastructureRank:5, FinanceRank:8, ResearchRank:11, TradeRank:11}
 ]
 
-
-
 var selectedRegions = []
 var selectedMetrics = []
 let selectedLevel = 2;
 
-function calculateFilteredRanks(data) {
-    if (selectedMetrics.length == 0){
-        data.forEach(function(d){
-            d.liveRank = d.overallRank;
-        })
-        data.sort((a, b) => (a.overallRank > b.overallRank) ? 1 : -1)
-    } else {
-        liveMetrics = ["#skills-spider", "#adoption-spider", "#infra-spider", "#research-spider", "#finance-spider", "#trade-spider"]
-        liveMetrics = liveMetrics.filter(function(value, index, arr){ 
-            return !selectedMetrics.includes(value);
-        });
-        data.forEach(function(d){
-            d.liveScore = 0
-            liveMetrics.forEach(function(m){
-                d.liveScore += d[m]
-            })
-        });
-        
-        data.sort((a, b) => (a.liveScore > b.liveScore) ? 1 : -1)
-        for (var i = 0; i < data.length; i++){
-            data[i].liveRank = i+1;
-        }
-    }
-    return data
-    
-}
+const allMetrics = ['overallRank', 'skillsRank', 'adoptionRank', 'InfrastructureRank', 'FinanceRank', 'ResearchRank', 'TradeRank'];
 
 function buildDatatable(data) {
     
     tableHtml = '<table id="rankings-table" class="table-responsive stripe hover" style="width:100%"><thead><tr><th>Overall Rank</th><th>Region</th><th>Skills Rank</th><th>Adoption Rank</th><th>Infrastructure Rank</th><th>R&D Rank</th><th>F&I Rank</th><th>Trade Rank</th></tr></thead><tbody>';
     headerCreated = false;
     for (let i = 0; i < data.length; i++){
-        tableHtml += `<tr><td>${i + 1}</td><td>${data[i].name}</td>`
-        for (let k in headerLookup) {
+        tableHtml += `<tr><td>${i + 1}</td><td>${data[i].region}</td>`
+        for (let k in allMetrics) {
             if (!selectedMetrics.includes(k)) {
                 tableHtml += `<td>${data[i][k]}</td>`
             }
