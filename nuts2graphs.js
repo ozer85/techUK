@@ -133,10 +133,11 @@ const nuts1data = [
 var selectedRegions = []
 var selectedMetrics = []
 let selectedLevel = 2;
-const v = 1;
+const v = 1.1;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
+const allRegionsSVGs = [NEsvgs, NWsvgs, YHsvgs, EMsvgs, WMsvgs, EEsvgs, LDNsvgs, SEsvgs, SWsvgs, Wsvgs, Ssvgs];
 
 function buildDatatable(data) {
     
@@ -161,6 +162,24 @@ function buildDatatable(data) {
         paging: true,
         destroy: true
     });    
+}
+
+function buildSVGText (regions=[]) {
+    svgText = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano">';
+    if (regions.length == 0){
+        allRegionsSVGs.forEach((r)=>{
+            for(let n in r){
+                svgText += r[n];
+            }
+        });
+    }
+
+    svgText += '</svg>';
+    return svgText
+}
+
+function generateMap (svgText = buildSVGText()){
+    $('#heatmap').append(svgText);
 }
 
 function updateMainPanel() {		
@@ -633,3 +652,4 @@ function wrap(text, width) {
 let all_data = selectedLevel == 2 ? nuts2data : nuts1data;
 all_data.sort((a, b) => (a.overallRank > b.overallRank) ? 1 : -1)
 buildDatatable(all_data)
+generateMap()
