@@ -266,26 +266,26 @@ function mapClickHandler(element_id) {
 
 function RadarChart(id, data, options) {
     var cfg = {
-    w: 600,				//Width of the circle
-    h: 600,				//Height of the circle
-    margin: {top: 20, right: 20, bottom: 20, left: 20}, //The margins of the SVG
-    levels: 3,				//How many levels or inner circles should there be drawn
-    maxValue: 0, 			//What is the value that the biggest circle will represent
-    labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
-    wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
-    opacityArea: 0.35, 	//The opacity of the area of the blob
-    dotRadius: 4, 			//The size of the colored circles of each blog
-    opacityCircles: 0.1, 	//The opacity of the circles of each blob
-    strokeWidth: 2, 		//The width of the stroke around each blob
-    roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
-    color: d3.scale.category10()	//Color function
+        w: 600,				//Width of the circle
+        h: 600,				//Height of the circle
+        margin: {top: 20, right: 20, bottom: 20, left: 20}, //The margins of the SVG
+        levels: 3,				//How many levels or inner circles should there be drawn
+        maxValue: 0, 			//What is the value that the biggest circle will represent
+        labelFactor: 1.25, 	//How much farther than the radius of the outer circle should the labels be placed
+        wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
+        opacityArea: 0.35, 	//The opacity of the area of the blob
+        dotRadius: 4, 			//The size of the colored circles of each blog
+        opacityCircles: 0.1, 	//The opacity of the circles of each blob
+        strokeWidth: 2, 		//The width of the stroke around each blob
+        roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
+        color: d3.scale.category10()	//Color function
     };
     
     //Put all of the options into a variable called cfg
     if('undefined' !== typeof options){
-    for(var i in options){
-        if('undefined' !== typeof options[i]){ cfg[i] = options[i]; }
-    }//for i
+        for(var i in options){
+            if('undefined' !== typeof options[i]){ cfg[i] = options[i]; }
+        }//for i
     }//if
     
     //If the supplied maxValue is smaller than the actual one, replace by the max in the data
@@ -503,7 +503,7 @@ function RadarChart(id, data, options) {
 
     //Taken from http://bl.ocks.org/mbostock/7555321
     //Wraps SVG text	
-    function wrap(text, width) {
+function wrap(text, width) {
     text.each(function() {
         var text = d3.select(this),
             words = text.text().split(/\s+/).reverse(),
@@ -530,131 +530,132 @@ function RadarChart(id, data, options) {
     
 }//RadarChart
 
-var margin = {top: 60, right: 60, bottom: 60, left: 60},
-    width = Math.min(350, $(".spider").width() - 10) - margin.left - margin.right,
-    height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+// var margin = {top: 60, right: 60, bottom: 60, left: 60},
+//     width = Math.min(350, $(".spider").width() - 10) - margin.left - margin.right,
+//     height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
             
-    ////////////////////////////////////////////////////////////// 
-    //////////////////// Draw the Chart ////////////////////////// 
-    ////////////////////////////////////////////////////////////// 
+//     ////////////////////////////////////////////////////////////// 
+//     //////////////////// Draw the Chart ////////////////////////// 
+//     ////////////////////////////////////////////////////////////// 
 
-    var color = d3.scale.ordinal()
-        .range(["#EDC951","#CC333F","#00A0B0"]);
+//     var color = d3.scale.ordinal()
+//         .range(["#EDC951","#CC333F","#00A0B0"]);
         
-    //Call function to draw the Radar chart
-    //RadarChart(".radarChart", data, radarChartOptions);
-    var SkillsChartOptions = {
-        w: width,
-        h: height,
-        margin: margin,
-        maxValue: 12,
-        levels: 6,
-        roundStrokes: true,
-        color: d3.scale.ordinal()
-        .range(["#FEB300"])
-    };
+//     //Call function to draw the Radar chart
+//     //RadarChart(".radarChart", data, radarChartOptions);
+//     var SkillsChartOptions = {
+//         w: width,
+//         h: height,
+//         margin: margin,
+//         maxValue: 12,
+//         levels: 6,
+//         roundStrokes: true,
+//         color: d3.scale.ordinal()
+//         .range(["#FEB300"])
+//     };
 
-    var AdoptionChartOptions = {
-        w: width,
-        h: height,
-        margin: margin,
-        maxValue: 12,
-        levels: 6,
-        roundStrokes: true,
-        color: d3.scale.ordinal()
-        .range(["#D7501C"])
-    };
+//     var AdoptionChartOptions = {
+//         w: width,
+//         h: height,
+//         margin: margin,
+//         maxValue: 12,
+//         levels: 6,
+//         roundStrokes: true,
+//         color: d3.scale.ordinal()
+//         .range(["#D7501C"])
+//     };
 
-    var InfraChartOptions = {
-        w: width,
-        h: height,
-        margin: margin,
-        maxValue: 12,
-        levels: 6,
-        roundStrokes: true,
-        color: d3.scale.ordinal()
-        .range(["#AA004C"])
-    };
+//     var InfraChartOptions = {
+//         w: width,
+//         h: height,
+//         margin: margin,
+//         maxValue: 12,
+//         levels: 6,
+//         roundStrokes: true,
+//         color: d3.scale.ordinal()
+//         .range(["#AA004C"])
+//     };
 
-    var ResearchChartOptions = {
-        w: width,
-        h: height,
-        margin: margin,
-        maxValue: 12,
-        levels: 6,
-        roundStrokes: true,
-        color: d3.scale.ordinal()
-        .range(["#2CD5C4"])
-    };
-    var FinanceChartOptions = {
-        w: width,
-        h: height,
-        margin: margin,
-        maxValue: 12,
-        levels: 6,
-        roundStrokes: true,
-        color: d3.scale.ordinal()
-        .range(["#007EC5"])
-    };
-    var TradeChartOptions = {
-        w: width,
-        h: height,
-        margin: margin,
-        maxValue: 12,
-        levels: 6,
-        roundStrokes: true,
-        color: d3.scale.ordinal()
-        .range(["#774FC4"])
-    };
+//     var ResearchChartOptions = {
+//         w: width,
+//         h: height,
+//         margin: margin,
+//         maxValue: 12,
+//         levels: 6,
+//         roundStrokes: true,
+//         color: d3.scale.ordinal()
+//         .range(["#2CD5C4"])
+//     };
+//     var FinanceChartOptions = {
+//         w: width,
+//         h: height,
+//         margin: margin,
+//         maxValue: 12,
+//         levels: 6,
+//         roundStrokes: true,
+//         color: d3.scale.ordinal()
+//         .range(["#007EC5"])
+//     };
+//     var TradeChartOptions = {
+//         w: width,
+//         h: height,
+//         margin: margin,
+//         maxValue: 12,
+//         levels: 6,
+//         roundStrokes: true,
+//         color: d3.scale.ordinal()
+//         .range(["#774FC4"])
+//     };
 
-    var spiderDict = {
-        '#skills-spider': {
-            data: skillsSpider,
-            options: SkillsChartOptions
-        },
-        '#adoption-spider': {
-            data: adoptionSpider,
-            options: AdoptionChartOptions
-        },
-        '#infra-spider': {
-            data: InfrastructureSpider,
-            options: InfraChartOptions
-        },
-        '#research-spider': {
-            data: ResearchSpider,
-            options: ResearchChartOptions
-        },
-        '#finance-spider': {
-            data: FinanceSpider,
-            options: FinanceChartOptions
-        },
-        '#trade-spider': {
-            data: TradeSpider,
-            options: TradeChartOptions
-        }	
-    }
+//     var spiderDict = {
+//         '#skills-spider': {
+//             data: skillsSpider,
+//             options: SkillsChartOptions
+//         },
+//         '#adoption-spider': {
+//             data: adoptionSpider,
+//             options: AdoptionChartOptions
+//         },
+//         '#infra-spider': {
+//             data: InfrastructureSpider,
+//             options: InfraChartOptions
+//         },
+//         '#research-spider': {
+//             data: ResearchSpider,
+//             options: ResearchChartOptions
+//         },
+//         '#finance-spider': {
+//             data: FinanceSpider,
+//             options: FinanceChartOptions
+//         },
+//         '#trade-spider': {
+//             data: TradeSpider,
+//             options: TradeChartOptions
+//         }	
+//     }
 
-$(window).on('resize', function(){
-        container_width = $(".spider").width();
-        //container_width = (window.innerWidth/4.5) - 10;
-        //$(".spider svg").attr("width", container_width).attr("height", container_width);
-        for(const element_id in spiderDict){
-            spiderDict[element_id].options.w = Math.min(350, (container_width*0.7));
-            spiderDict[element_id].options.h = Math.min(350, (container_width*0.7));
-            RadarChart(element_id, spiderDict[element_id].data, spiderDict[element_id].options);
-            if (selectedMetrics.includes(element_id)){
-                $(element_id).find('.radarWrapper').children().attr("style", "fill: rgb(156,162,173); fill-opacity: 0.35;");
-            };
-        }
-    });
+// $(window).on('resize', function(){
+//     container_width = $(".spider").width();
+//     //container_width = (window.innerWidth/4.5) - 10;
+//     //$(".spider svg").attr("width", container_width).attr("height", container_width);
+//     for(const element_id in spiderDict){
+//         spiderDict[element_id].options.w = Math.min(350, (container_width*0.7));
+//         spiderDict[element_id].options.h = Math.min(350, (container_width*0.7));
+//         RadarChart(element_id, spiderDict[element_id].data, spiderDict[element_id].options);
+//         if (selectedMetrics.includes(element_id)){
+//             $(element_id).find('.radarWrapper').children().attr("style", "fill: rgb(156,162,173); fill-opacity: 0.35;");
+//         };
+//     }
+// });
 
     
-    RadarChart("#skills-spider", skillsSpider, SkillsChartOptions)
-    RadarChart("#adoption-spider", adoptionSpider, AdoptionChartOptions)
-    RadarChart("#infra-spider", InfrastructureSpider, InfraChartOptions)
-    RadarChart("#research-spider", ResearchSpider, ResearchChartOptions)
-    RadarChart("#finance-spider", FinanceSpider, FinanceChartOptions)
-    RadarChart("#trade-spider", TradeSpider, TradeChartOptions)
+    // RadarChart("#skills-spider", skillsSpider, SkillsChartOptions)
+    // RadarChart("#adoption-spider", adoptionSpider, AdoptionChartOptions)
+    // RadarChart("#infra-spider", InfrastructureSpider, InfraChartOptions)
+    // RadarChart("#research-spider", ResearchSpider, ResearchChartOptions)
+    // RadarChart("#finance-spider", FinanceSpider, FinanceChartOptions)
+    // RadarChart("#trade-spider", TradeSpider, TradeChartOptions)
 
-    all_data.sort((a, b) => (a.overallRank > b.overallRank) ? 1 : -1)
-    buildDatatable(all_data)
+let all_data = selectedLevel == 2 ? nuts2data : nuts1data;
+all_data.sort((a, b) => (a.overallRank > b.overallRank) ? 1 : -1)
+buildDatatable(all_data)
