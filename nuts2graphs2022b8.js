@@ -135,7 +135,8 @@ let nuts2lookup = {}
 nuts2data.forEach((d)=>{
     let id = replaceAll(d.region," ", "");
     id = replaceAll(id, ",", "");
-    id = replaceAll(id, "-", "");
+    id = replaceAll(id, "-", "");    
+    id = replaceAll(id, "/", "");
     nuts2lookup[d.region] = {
         overall: d.overallRank,
         skills: d.skillsRank,
@@ -160,7 +161,7 @@ const colourMap = {
 var selectedRegionsCC = []
 var selectedMetricsCC = []
 let selectedLevel = 2;
-const v = 2;
+const v = 2.1;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
@@ -218,6 +219,7 @@ function buildSVGText (regions=[]) {
                 let id = replaceAll(n," ", "");
                 id = replaceAll(id, ",", "");
                 id = replaceAll(id, "-", "");
+                id = replaceAll(id, "/", "");
                 const opac = getOpacity(n, 'overall');
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
