@@ -180,11 +180,16 @@ function getRankOrdinal (regionName){
 
 function getOpacity (regionName){
     nuts2data.forEach((r)=>{
+        console.log(r.region);
         if (r.region == regionName){
             return 100 - (r.overallRank * 2)
         }
     })
     return null
+}
+
+function replaceAll(str, find, replace) {
+    return str.replace(new RegExp(find, 'g'), replace);
 }
 
 function buildSVGText (regions=[]) {
@@ -194,7 +199,9 @@ function buildSVGText (regions=[]) {
             for(let n in r){
                 const rankOrdinal = getRankOrdinal(n);
                 const fillColour = getHeatmapColour(rankOrdinal);
-                const id = n.replace(" ", "").replace(",", "").replace("-", "");
+                const id = replaceAll(n," ", "");
+                id = replaceAll(id, ",", "");
+                id = replaceAll(id, "-", "");
                 const opac = getOpacity(n);
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
