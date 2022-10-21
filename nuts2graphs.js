@@ -133,7 +133,7 @@ const nuts1data = [
 var selectedRegions = []
 var selectedMetrics = []
 let selectedLevel = 2;
-const v = 1.2;
+const v = 1.3;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
@@ -165,7 +165,7 @@ function buildDatatable(data) {
 }
 
 function buildSVGText (regions=[]) {
-    svgText = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 600 600">';
+    svgText = '<svg xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 700 600" style="transform: translate3d(1px, -22%, 0px);">';
     if (regions.length == 0){
         allRegionsSVGs.forEach((r)=>{
             for(let n in r){
