@@ -175,7 +175,6 @@ function getRankOrdinal (regionName){
             return r.overallRank/nuts2data.length
         }
     })
-    return null
 }
 
 function getOpacity (regionName){
@@ -186,7 +185,6 @@ function getOpacity (regionName){
             return opac
         }
     })
-    return null
 }
 
 function replaceAll(str, find, replace) {
@@ -206,9 +204,9 @@ function buildSVGText (regions=[]) {
                 const opac = getOpacity(n);
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
-                    newAtt = newAtt.replace("<g>", `<g fill="#01e37" opacity="${opac}%" id="#${id}">`);
+                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="#${id}">`);
                 } else {
-                    newAtt = newAtt.replace("<path", `<path fill="#01e37" opacity="${opac}%" id="#${id}"`);
+                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="#${id}"`);
                 }
                 svgText += newAtt;
             }
