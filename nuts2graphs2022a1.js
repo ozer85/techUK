@@ -198,9 +198,9 @@ function buildSVGText (regions=[]) {
                 const opac = getOpacity(n);
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
-                    newAtt.replace("<g>", `<g fill="#01e37" opacity="${opac}%" id="#${id}">`);
+                    newAtt = newAtt.replace("<g>", `<g fill="#01e37" opacity="${opac}%" id="#${id}">`);
                 } else {
-                    newAtt.replace("<path", `<path fill="#01e37" opacity="${opac}%" id="#${id}"`);
+                    newAtt = newAtt.replace("<path", `<path fill="#01e37" opacity="${opac}%" id="#${id}"`);
                 }
                 svgText += newAtt;
             }
