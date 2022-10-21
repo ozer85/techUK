@@ -98,7 +98,7 @@ var all_data = [ {region:"#heatmap-em", overallRank:8,"#skills-spider":10,"#adop
 			{axis: "West Midlands", value: 10},
 			{axis: "Wales", value: 12},
 			{axis: "North West", value: 4},
-			{axis: "Northern Ireland", value: 29}
+			{axis: "Northern Ireland", value: 9}
 		]]
 
 

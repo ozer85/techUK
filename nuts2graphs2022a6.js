@@ -177,7 +177,7 @@ function getRankOrdinal (regionName){
     })
 }
 
-function getOpacity (regionName){
+const getOpacity = async (regionName) =>{
     nuts2data.forEach((r)=>{
         if (r.region == regionName){
             const opac = 100 - (r.overallRank * 2);
