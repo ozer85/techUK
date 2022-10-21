@@ -133,6 +133,9 @@ const nuts1data = [
 let nuts2lookup = {}
 
 nuts2data.forEach((d)=>{
+    let id = replaceAll(d.region," ", "");
+    id = replaceAll(id, ",", "");
+    id = replaceAll(id, "-", "");
     nuts2lookup[d.region] = {
         overall: d.overallRank,
         skills: d.skillsRank,
@@ -140,14 +143,24 @@ nuts2data.forEach((d)=>{
         infra: d.infrastructureRank,
         finance: d.financeRank,
         research: d.researchRank,
-        trade: d.tradeRank
+        trade: d.tradeRank,
+        region: id
     }
 });
+
+const colourMap = {
+    skills: '#FEB300',
+    adoption: '#D7501C',
+    infra: '#AA004C',
+    finance: '#007EC5',
+    research: '#2CD5C4',
+    trade: '#774FC4'
+}
 
 var selectedRegionsCC = []
 var selectedMetricsCC = []
 let selectedLevel = 2;
-const v = 1.7;
+const v = 1.8;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
@@ -186,6 +199,14 @@ function getOpacity (regionName){
 
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
+}
+
+const updateHeatmap = (metric) => {
+    for (const key in nuts2data) {
+        const opac = getOpacity(nuts2data[key][metric]);
+        $(`"#${nuts2data[key].region}"`).attr("fill", `${colourMap[metric]}`);
+        $(`"#${nuts2data[key].region}"`).attr("opacity", `${opac}`); 
+    }
 }
 
 function buildSVGText (regions=[]) {
