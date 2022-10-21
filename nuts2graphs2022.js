@@ -133,7 +133,7 @@ const nuts1data = [
 var selectedRegions = []
 var selectedMetrics = []
 let selectedLevel = 2;
-const v = 1.5;
+const v = 1.6;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
