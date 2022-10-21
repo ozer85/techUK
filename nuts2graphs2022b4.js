@@ -160,7 +160,7 @@ const colourMap = {
 var selectedRegionsCC = []
 var selectedMetricsCC = []
 let selectedLevel = 2;
-const v = 1.8;
+const v = 1.9;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
@@ -203,7 +203,7 @@ function replaceAll(str, find, replace) {
 
 const updateHeatmap = (metric) => {
     for (const key in nuts2data) {
-        const opac = getOpacity(nuts2data[key].region, nuts2data[key][metric]);
+        const opac = getOpacity(key, nuts2data[key][metric]);
         $(`"#${nuts2data[key].region}"`).attr("fill", `${colourMap[metric]}`);
         $(`"#${nuts2data[key].region}"`).attr("opacity", `${opac}`); 
     }
@@ -217,7 +217,7 @@ function buildSVGText (regions=[]) {
                 let id = replaceAll(n," ", "");
                 id = replaceAll(id, ",", "");
                 id = replaceAll(id, "-", "");
-                const opac = getOpacity(n);
+                const opac = getOpacity(n, 'overall');
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
                     newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="#${id}">`);
