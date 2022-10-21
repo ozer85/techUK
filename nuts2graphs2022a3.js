@@ -199,7 +199,7 @@ function buildSVGText (regions=[]) {
             for(let n in r){
                 const rankOrdinal = getRankOrdinal(n);
                 const fillColour = getHeatmapColour(rankOrdinal);
-                const id = replaceAll(n," ", "");
+                let id = replaceAll(n," ", "");
                 id = replaceAll(id, ",", "");
                 id = replaceAll(id, "-", "");
                 const opac = getOpacity(n);
