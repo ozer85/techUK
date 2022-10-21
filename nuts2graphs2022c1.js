@@ -161,7 +161,7 @@ const colourMap = {
 var selectedRegionsCC = []
 var selectedMetricsCC = []
 let selectedLevel = 2;
-const v = 2.2;
+const v = 2.3;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
@@ -205,8 +205,10 @@ function replaceAll(str, find, replace) {
 const updateHeatmap = (metric) => {
     for (const key in nuts2lookup) {
         const opac = getOpacity(key, nuts2lookup[key][metric]);
-        $("'#" + nuts2lookup[key].region + "'").prop("fill", colourMap[metric]);
-        $("'#" + nuts2lookup[key].region + "'").prop("opacity", "#" + opac); 
+        const regionId = "'#" + nuts2lookup[key].region + "'";
+        console.log(regionId);
+        $(regionId).attr("fill", colourMap[metric]);
+        $(regionId).attr("opacity", "#" + opac); 
     }
 }
 
