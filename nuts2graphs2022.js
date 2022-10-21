@@ -187,10 +187,11 @@ function buildSVGText (regions=[]) {
                 const fillColour = getHeatmapColour(rankOrdinal);
                 const id = n.replace(" ", "").replace(",", "").replace("-", "");
                 let newAtt = r[n];
+                console.log(fillColour, id);
                 if (newAtt.includes("<g>")){
                     newAtt.replace("<g>", `<g fill="${fillColour}" id="#${id}">`);
                 } else {
-                    newAtt.replace("<path>", `<path fill="${fillColour}" id="#${id}">`);
+                    newAtt.replace("<path", `<path fill="${fillColour}" id="#${id}"`);
                 }
                 svgText += newAtt;
             }
