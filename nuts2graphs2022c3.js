@@ -207,8 +207,8 @@ const updateHeatmap = (metric) => {
         const opac = getOpacity(key, nuts2lookup[key][metric]);
         const regionId = "#" + nuts2lookup[key].region;
         console.log(regionId);
-        $(regionId).attr("fill", colourMap[metric]);
-        $(regionId).attr("opacity", "#" + opac); 
+        $(regionId).css("fill", colourMap[metric]);
+        $(regionId).css("opacity", "#" + opac); 
     }
 }
 
