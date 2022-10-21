@@ -192,8 +192,8 @@ function buildDatatableCC(data) {
 }
 
 
-function getOpacity (regionName){
-    const opac = 100 - (nuts2lookup[regionName].overall * 2);
+function getOpacity (regionName, metric){
+    const opac = 100 - (nuts2lookup[regionName][metric] * 2);
     return opac
 }
 
@@ -203,7 +203,7 @@ function replaceAll(str, find, replace) {
 
 const updateHeatmap = (metric) => {
     for (const key in nuts2data) {
-        const opac = getOpacity(nuts2data[key][metric]);
+        const opac = getOpacity(nuts2data[key].region, nuts2data[key][metric]);
         $(`"#${nuts2data[key].region}"`).attr("fill", `${colourMap[metric]}`);
         $(`"#${nuts2data[key].region}"`).attr("opacity", `${opac}`); 
     }
