@@ -164,12 +164,34 @@ function buildDatatable(data) {
     });    
 }
 
+function getHeatmapColour (v){
+    return d3.interpolateBlues(v)
+}
+
+function getRankOrdinal (regionName){
+    nuts2data.forEach((r)=>{
+        if (r.region == regionName){
+            return r.overallRank/nuts2data.length
+        }
+    })
+    return null
+}
+
 function buildSVGText (regions=[]) {
     svgText = '<svg xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 700 600" style="transform: translate3d(10%, -1%, 0px);">';
     if (regions.length == 0){
         allRegionsSVGs.forEach((r)=>{
             for(let n in r){
-                svgText += r[n];
+                const rankOrdinal = getRankOrdinal(n);
+                const fillColour = getHeatmapColour(rankOrdinal);
+                const id = n.replace(" ", "").replace(",", "").replace("-", "");
+                let newAtt = r[n];
+                if (newAtt.includes("<g>")){
+                    newAtt.replace("<g>", `<g fill="${fillColour}" id="#${id}">`);
+                } else {
+                    newAtt.replace("<path>", `<path fill="${fillColour}" id="#${id}">`);
+                }
+                svgText += newAtt;
             }
         });
     }
