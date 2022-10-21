@@ -155,7 +155,7 @@ const allRegionsSVGs = [NEsvgs, NWsvgs, YHsvgs, EMsvgs, WMsvgs, EEsvgs, LDNsvgs,
 
 function buildDatatableCC(data) {
     
-    tableHtml = '<table id="rankings-table" class="table-responsive stripe hover" style="width:100%"><thead><tr><th>Overall Rank</th><th>Region</th><th>Skills Rank</th><th>Adoption Rank</th><th>Infrastructure Rank</th><th>R&D Rank</th><th>F&I Rank</th><th>Trade Rank</th></tr></thead><tbody>';
+    tableHtml = '<table id="rankings-table-cc" class="table-responsive stripe hover" style="width:100%"><thead><tr><th>Overall Rank</th><th>Region</th><th>Skills Rank</th><th>Adoption Rank</th><th>Infrastructure Rank</th><th>R&D Rank</th><th>F&I Rank</th><th>Trade Rank</th></tr></thead><tbody>';
     for (let i = 0; i < data.length; i++){
         tableHtml += `<tr><td>${i + 1}</td><td>${data[i].region}</td>`
         allMetrics.forEach((k)=>{
@@ -168,7 +168,7 @@ function buildDatatableCC(data) {
     tableHtml += '</tbody></table>'
     $("#main-panel-cc").html(tableHtml);
 
-    var rankingsTable = $('#rankings-table').DataTable({
+    var rankingsTable = $('#rankings-table-cc').DataTable({
         pageLength: 12,
         searching: false,
         lengthChange: false,
@@ -269,6 +269,6 @@ const zoomToLocation = async (x,y,z) =>{
 
 
 let all_data_cc = selectedLevel == 2 ? nuts2data : nuts1data;
-all_data_cc.sort((a, b) => (a.overallRank > b.overallRank) ? 1 : -1)
-buildDatatableCC(all_data_cc)
-generateMap()
+all_data_cc.sort((a, b) => (a.overallRank > b.overallRank) ? 1 : -1);
+buildDatatableCC(all_data_cc);
+generateMap();
