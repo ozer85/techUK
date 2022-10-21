@@ -130,12 +130,10 @@ const nuts1data = [
     {region: 'Yorkshire & the Humber', overallRank:9, "skillsRank":9, "adoptionRank":10, "infrastructureRank":5, "financeRank":8, "researchRank":11, "tradeRank":11}
 ]
 
-import { scaleLinear } from 'd3-scale'
-
 var selectedRegions = []
 var selectedMetrics = []
 let selectedLevel = 2;
-const v = 1.4;
+const v = 1.5;
 console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
