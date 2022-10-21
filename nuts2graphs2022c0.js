@@ -205,8 +205,8 @@ function replaceAll(str, find, replace) {
 const updateHeatmap = (metric) => {
     for (const key in nuts2lookup) {
         const opac = getOpacity(key, nuts2lookup[key][metric]);
-        $(`#${nuts2lookup[key].region}`).prop("fill", `${colourMap[metric]}`);
-        $(`#${nuts2lookup[key].region}`).prop("opacity", `${opac}`); 
+        $("'#" + nuts2lookup[key].region + "'").prop("fill", colourMap[metric]);
+        $("'#" + nuts2lookup[key].region + "'").prop("opacity", "#" + opac); 
     }
 }
 
