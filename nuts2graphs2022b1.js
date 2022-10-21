@@ -193,8 +193,6 @@ function buildSVGText (regions=[]) {
     if (regions.length == 0){
         allRegionsSVGs.forEach((r)=>{
             for(let n in r){
-                const rankOrdinal = getRankOrdinal(n);
-                const fillColour = getHeatmapColour(rankOrdinal);
                 let id = replaceAll(n," ", "");
                 id = replaceAll(id, ",", "");
                 id = replaceAll(id, "-", "");
