@@ -206,9 +206,9 @@ const updateHeatmap = (metric) => {
     for (const key in nuts2lookup) {
         const opac = getOpacity(key, nuts2lookup[key][metric]);
         const regionId = "#" + nuts2lookup[key].region;
-        console.log($(regionId));
-        $('svg').find(regionId).attr("fill", colourMap[metric]);
-        $('svg').find(regionId).attr("opacity", "#" + opac); 
+        console.log($('svg').find(regionId));
+        $('svg').find(regionId).css("fill", colourMap[metric]);
+        $('svg').find(regionId).css("opacity", "#" + opac); 
     }
 }
 
