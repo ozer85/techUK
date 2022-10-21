@@ -206,9 +206,9 @@ const updateHeatmap = (metric) => {
     for (const key in nuts2lookup) {
         const opac = getOpacity(key, nuts2lookup[key][metric]);
         const regionId = "#" + nuts2lookup[key].region;
-        console.log($('svg#cc-heatmap-svg').find(regionId));
-        $('svg#cc-heatmap-svg').find(regionId).css("fill", colourMap[metric]);
-        $('svg#cc-heatmap-svg').find(regionId).css("opacity", "#" + opac); 
+        console.log($(regionId));
+        $(regionId).css("fill", colourMap[metric]);
+        $(regionId).css("opacity", "#" + opac); 
     }
 }
 
@@ -224,9 +224,9 @@ function buildSVGText (regions=[]) {
                 const opac = getOpacity(n, 'overall');
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
-                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="#${id}">`);
+                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="${id}">`);
                 } else {
-                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="#${id}"`);
+                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="${id}"`);
                 }
                 svgText += newAtt;
             }
