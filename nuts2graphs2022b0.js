@@ -178,18 +178,6 @@ function buildDatatableCC(data) {
     });    
 }
 
-function getHeatmapColour (v){
-    const colorScale = d3.scaleLinear().domain(d3.extent([1,41])).range(['white','blue'])
-    return colorScale(v)
-}
-
-function getRankOrdinal (regionName){
-    nuts2data.forEach((r)=>{
-        if (r.region == regionName){
-            return r.overallRank/nuts2data.length
-        }
-    })
-}
 
 function getOpacity (regionName){
     const opac = 100 - (nuts2lookup[regionName].overall * 2);
