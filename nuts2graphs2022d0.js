@@ -155,7 +155,8 @@ const colourMap = {
     infra: '#AA004C',
     finance: '#007EC5',
     research: '#2CD5C4',
-    trade: '#774FC4'
+    trade: '#774FC4',
+    overall: '#001e37'
 }
 
 var selectedRegionsCC = []
