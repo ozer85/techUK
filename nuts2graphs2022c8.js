@@ -206,14 +206,14 @@ const updateHeatmap = (metric) => {
     for (const key in nuts2lookup) {
         const opac = getOpacity(key, nuts2lookup[key][metric]);
         const regionId = "#" + nuts2lookup[key].region;
-        console.log($('svg').find(regionId));
-        $('svg').find(regionId).css("fill", colourMap[metric]);
-        $('svg').find(regionId).css("opacity", "#" + opac); 
+        console.log($('svg#cc-heatmap-svg').find(regionId));
+        $('svg#cc-heatmap-svg').find(regionId).css("fill", colourMap[metric]);
+        $('svg#cc-heatmap-svg').find(regionId).css("opacity", "#" + opac); 
     }
 }
 
 function buildSVGText (regions=[]) {
-    svgText = '<svg xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 700 600" style="transform: translate3d(10%, -1%, 0px);">';
+    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 700 600" style="transform: translate3d(10%, -1%, 0px);">';
     if (regions.length == 0){
         allRegionsSVGs.forEach((r)=>{
             for(let n in r){
