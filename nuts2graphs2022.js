@@ -178,6 +178,15 @@ function getRankOrdinal (regionName){
     return null
 }
 
+function getOpacity (regionName){
+    nuts2data.forEach((r)=>{
+        if (r.region == regionName){
+            return 100 - (r.overallRank * 2)
+        }
+    })
+    return null
+}
+
 function buildSVGText (regions=[]) {
     svgText = '<svg xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 700 600" style="transform: translate3d(10%, -1%, 0px);">';
     if (regions.length == 0){
@@ -186,12 +195,12 @@ function buildSVGText (regions=[]) {
                 const rankOrdinal = getRankOrdinal(n);
                 const fillColour = getHeatmapColour(rankOrdinal);
                 const id = n.replace(" ", "").replace(",", "").replace("-", "");
+                const opac = getOpacity(n);
                 let newAtt = r[n];
-                console.log(fillColour, id);
                 if (newAtt.includes("<g>")){
-                    newAtt.replace("<g>", `<g fill="${fillColour}" id="#${id}">`);
+                    newAtt.replace("<g>", `<g fill="#01e37" opacity="${opac}%" id="#${id}">`);
                 } else {
-                    newAtt.replace("<path", `<path fill="${fillColour}" id="#${id}"`);
+                    newAtt.replace("<path", `<path fill="#01e37" opacity="${opac}%" id="#${id}"`);
                 }
                 svgText += newAtt;
             }
