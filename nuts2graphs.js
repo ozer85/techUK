@@ -165,7 +165,8 @@ function buildDatatable(data) {
 }
 
 function getHeatmapColour (v){
-    return d3.interpolateBlues(v)
+    const colorScale = d3.scaleLinear().domain(d3.extent([1,41])).range(['white','blue'])
+    return colorScale(v)
 }
 
 function getRankOrdinal (regionName){
