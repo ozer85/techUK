@@ -130,6 +130,20 @@ const nuts1data = [
     {region: 'Yorkshire & the Humber', overallRank:9, "skillsRank":9, "adoptionRank":10, "infrastructureRank":5, "financeRank":8, "researchRank":11, "tradeRank":11}
 ]
 
+let nuts2lookup = {}
+
+nuts2data.forEach((d)=>{
+    nuts2lookup[d.region] = {
+        overall: d.overallRank,
+        skills: d.skillsRank,
+        adoption: d.adoptionRank,
+        infra: d.infrastructureRank,
+        finance: d.financeRank,
+        research: d.researchRank,
+        trade: d.tradeRank
+    }
+});
+
 var selectedRegions = []
 var selectedMetrics = []
 let selectedLevel = 2;
@@ -177,14 +191,9 @@ function getRankOrdinal (regionName){
     })
 }
 
-const getOpacity = async (regionName) =>{
-    nuts2data.forEach((r)=>{
-        if (r.region == regionName){
-            const opac = 100 - (r.overallRank * 2);
-            console.log(opac);
-            return opac
-        }
-    })
+function getOpacity (regionName){
+    const opac = 100 - (nuts2lookup[regionName].overall * 2);
+    return opac
 }
 
 function replaceAll(str, find, replace) {
