@@ -203,6 +203,7 @@ function replaceAll(str, find, replace) {
 
 const updateHeatmap = (metric) => {
     for (const key in nuts2data) {
+        console.log(key, nuts2data[key]);
         const opac = getOpacity(key, nuts2data[key][metric]);
         $(`"#${nuts2data[key].region}"`).attr("fill", `${colourMap[metric]}`);
         $(`"#${nuts2data[key].region}"`).attr("opacity", `${opac}`); 
