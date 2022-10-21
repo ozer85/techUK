@@ -180,9 +180,10 @@ function getRankOrdinal (regionName){
 
 function getOpacity (regionName){
     nuts2data.forEach((r)=>{
-        console.log(r.region, regionName, r.region==regionName);
         if (r.region == regionName){
-            return 100 - (r.overallRank * 2)
+            const opac = 100 - (r.overallRank * 2);
+            console.log(opac);
+            return opac
         }
     })
     return null
