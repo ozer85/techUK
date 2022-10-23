@@ -258,6 +258,7 @@ function setCTM(element, matrix) {
 function generateMap (svgText = buildSVGText()){
     $('#heatmap-cc').append(svgText);
     setTimeout(() => {
+        var containerEl = document.getElementById('heatmap-cc');
         var svgEl = document.getElementById('cc-heatmap-svg');
         svgEl.addEventListener('wheel', function(e) {
             var delta = e.wheelDeltaY;
@@ -274,7 +275,7 @@ function generateMap (svgText = buildSVGText()){
                     .scale(zoomScale)
                     .translate(-p.x, -p.y);
             
-            setCTM(svgEl, svgEl.getCTM().multiply(zoomMat));
+            setCTM(svgEl, containerEl.getCTM().multiply(zoomMat));
         });
       }, 1000)
 }
