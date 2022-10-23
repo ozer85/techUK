@@ -252,6 +252,34 @@ function generateMap (svgText = buildSVGText()){
     $('#heatmap-cc').append(svgText);
 }
 
+function setCTM(element, matrix) {
+    var m = matrix;
+    var s = "matrix(" + m.a + "," + m.b + "," + m.c + "," + m.d + "," + m.e + "," + m.f + ")";
+    
+    element.setAttributeNS(null, "transform", s);
+}
+
+var svgEl = document.getElementById('cc-heatmap-svg');
+var zoomScale = 1;
+
+svgEl.addEventListener('wheel', function(e) {
+    var delta = e.wheelDeltaY;
+    zoomScale = Math.pow(1.1, delta/360);
+    
+    var p = svgEl.createSVGPoint();
+    p.x = e.clientX;
+    p.y = e.clientY;
+    
+    p = p.matrixTransform( svgEl.getCTM().inverse() );
+    
+    var zoomMat = svgEl.createSVGMatrix()
+            .translate(p.x, p.y)
+            .scale(zoomScale)
+            .translate(-p.x, -p.y);
+    
+    setCTM(svgEl, svgEl.getCTM().multiply(zoomMat));
+});
+
 function updateMainPanel() {		
     let all_data_cc = selectedLevel == 2 ? nuts2data : nuts1data;
     if (selectedRegionsCC.length == 0){
