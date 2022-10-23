@@ -235,9 +235,9 @@ function buildSVGText (regions=[]) {
                 const opac = getOpacity(nuts2lookup[n].overall);
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
-                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(${n})">`);
+                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover('${n}')">`);
                 } else {
-                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(${n})"`);
+                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover('${n}')"`);
                 }
                 svgText += newAtt;
             }
@@ -261,7 +261,6 @@ function resetZoom() {
 function setCTM(element, matrix) {
     var m = matrix;
     var s = "matrix(" + m.a + "," + m.b + "," + m.c + "," + m.d + "," + m.e + "," + m.f + ")";
-    console.log(s);
     
     element.setAttributeNS(null, "transform", s);
 }
