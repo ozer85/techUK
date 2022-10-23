@@ -206,7 +206,6 @@ function replaceAll(str, find, replace) {
 let selectedMetric = 'overall'
 
 const updateHeatmap = (metric) => {
-    resetZoom();
     if (selectedMetric == metric) {
         selectedMetric = 'overall';
         $('#' + metric).removeClass('filter-selected');
@@ -251,7 +250,7 @@ function buildSVGText (regions=[]) {
 
 function resetZoom() {
     var svgEl = document.getElementById('all-cc');
-    var s = "matrix('1,0,0,1,0,0')"; 
+    var s = "matrix(1,0,0,1,0,0)"; 
     svgEl.setAttributeNS(null, "transform", s);
 }
 
