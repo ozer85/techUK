@@ -235,9 +235,9 @@ function buildSVGText (regions=[]) {
                 const opac = getOpacity(nuts2lookup[n].overall);
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
-                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover('${n}', this)">`);
+                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(this)">`);
                 } else {
-                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover('${n}', this)"`);
+                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(this)"`);
                 }
                 svgText += newAtt;
             }
@@ -248,8 +248,10 @@ function buildSVGText (regions=[]) {
     return svgText
 }
 
-const onMapHover = (name, el) => {
-    console.log(el);
+const onMapHover = (el) => {
+   $('.highlighted-area').removeClass('highlighted-area');
+   $(el).addClass('highlighted-area');
+   console.log(el.name);
 }
 
 function resetZoom() {
