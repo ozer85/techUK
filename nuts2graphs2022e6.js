@@ -224,7 +224,7 @@ const updateHeatmap = (metric) => {
 }
 
 function buildSVGText (regions=[]) {
-    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" style="transform: translate3d(10%, -1%, 0px);"><g id="all-cc">';
+    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(10%, -1%, 0px);"><g id="all-cc">';
     if (regions.length == 0){
         allRegionsSVGs.forEach((r)=>{
             for(let n in r){
@@ -275,7 +275,7 @@ function generateMap (svgText = buildSVGText()){
                     .scale(zoomScale)
                     .translate(-p.x, -p.y);
             
-            setCTM(containerEl, svgEl.getCTM().multiply(zoomMat));
+            setCTM(svgEl, svgEl.getCTM().multiply(zoomMat));
         });
       }, 1000)
 }
