@@ -259,11 +259,9 @@ function setCTM(element, matrix) {
     element.setAttributeNS(null, "transform", s);
 }
 
-var svgEl = document.getElementById('cc-heatmap-svg');
-console.log(svgEl);
 var zoomScale = 1;
 
-svgEl.addEventListener('wheel', function(e) {
+$('#cc-heatmap-svg').on('wheel', function(e) {
     var delta = e.wheelDeltaY;
     zoomScale = Math.pow(1.1, delta/360);
     
