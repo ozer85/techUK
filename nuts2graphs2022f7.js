@@ -256,7 +256,7 @@ const onMapHover = (el) => {
    $('.highlighted-area').removeClass('highlighted-area');
    $(el).addClass('highlighted-area');
    let name = $(el).attr('name');
-   $('#detail-text').html(`"<p><strong>${name}</strong></p><br/><ul><li><strong>Overall Rank: </strong>${nuts2lookup[name]['overall']}</li><li><strong>Skills Rank: </strong>${nuts2lookup[name]['skills']}</li><li><strong>Adoption Rank: </strong>${nuts2lookup[name]['adoption']}</li><li><strong>Infrastructure Rank: </strong>${nuts2lookup[name]['infra']}</li><li><strong>Finance & Investment Rank: </strong>${nuts2lookup[name]['finance']}</li><li><strong>Rsearch & Development Rank: </strong>${nuts2lookup[name]['research']}</li><li><strong>Trade Rank: </strong>${nuts2lookup[name]['trade']}</li></ul>"`)
+   $('#detail-text').html(`<p id='area-heading'><strong>${name}</strong></p>${nuts2lookup[name]['nuts1']}<br/><ul><li><strong>Overall Rank: </strong>${nuts2lookup[name]['overall']}</li><li><strong>Skills Rank: </strong>${nuts2lookup[name]['skills']}</li><li><strong>Adoption Rank: </strong>${nuts2lookup[name]['adoption']}</li><li><strong>Infrastructure Rank: </strong>${nuts2lookup[name]['infra']}</li><li><strong>Finance & Investment Rank: </strong>${nuts2lookup[name]['finance']}</li><li><strong>Rsearch & Development Rank: </strong>${nuts2lookup[name]['research']}</li><li><strong>Trade Rank: </strong>${nuts2lookup[name]['trade']}</li></ul>`)
 }
 
 function resetZoom() {
