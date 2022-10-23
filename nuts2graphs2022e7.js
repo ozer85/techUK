@@ -251,6 +251,7 @@ function buildSVGText (regions=[]) {
 function setCTM(element, matrix) {
     var m = matrix;
     var s = "matrix(" + m.a + "," + m.b + "," + m.c + "," + m.d + "," + m.e + "," + m.f + ")";
+    console.log(element);
     
     element.setAttributeNS(null, "transform", s);
 }
@@ -262,14 +263,13 @@ function generateMap (svgText = buildSVGText()){
         var svgEl = document.getElementById('all-cc');
         containerEl.addEventListener('wheel', function(e) {
             var delta = e.wheelDeltaY;
-            var zoomScale = Math.pow(1.1, delta/360);
+            var zoomScale = Math.pow(5.1, delta/360);
             
             var p = containerEl.createSVGPoint();
             p.x = e.clientX;
             p.y = e.clientY;
             
             p = p.matrixTransform( containerEl.getCTM().inverse() );
-            console.log(p);
             var zoomMat = containerEl.createSVGMatrix()
                     .translate(p.x, p.y)
                     .scale(zoomScale)
