@@ -261,7 +261,8 @@ function setCTM(element, matrix) {
 
 var zoomScale = 1;
 
-$('#cc-heatmap-svg').on('scroll', function(e) {
+$('#cc-heatmap-svg').scroll(function(e) {
+    console.log("scrolling...")
     var delta = e.wheelDeltaY;
     zoomScale = Math.pow(1.1, delta/360);
     
