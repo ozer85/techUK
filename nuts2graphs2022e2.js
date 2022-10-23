@@ -260,8 +260,6 @@ function generateMap (svgText = buildSVGText()){
     setTimeout(() => {
         var svgEl = document.getElementById('cc-heatmap-svg');
         svgEl.addEventListener('wheel', function(e) {
-        //$('#cc-heatmap-svg').scroll(function(e) {
-            console.log("scrolling...")
             var delta = e.wheelDeltaY;
             var zoomScale = Math.pow(1.1, delta/360);
             
@@ -270,7 +268,7 @@ function generateMap (svgText = buildSVGText()){
             p.y = e.clientY;
             
             p = p.matrixTransform( svgEl.getCTM().inverse() );
-            
+            console.log(p);
             var zoomMat = svgEl.createSVGMatrix()
                     .translate(p.x, p.y)
                     .scale(zoomScale)
