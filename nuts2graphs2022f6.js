@@ -167,6 +167,7 @@ console.log(`Version: ${v}`);
 
 const allMetrics = ["skillsRank", "adoptionRank", "infrastructureRank", "financeRank", "researchRank", "tradeRank"];
 const allRegionsSVGs = [NEsvgs, NWsvgs, YHsvgs, EMsvgs, WMsvgs, EEsvgs, LDNsvgs, SEsvgs, SWsvgs, Wsvgs, Ssvgs];
+const allRegionsNames = ["North East", "North West", "Yorkshire & The Humber", "East Midlands", "West Midlands", "East of England", "Greater London", "South East", "South West", "Wales", "Scotland"];
 
 function buildDatatableCC(data) {
     
@@ -226,8 +227,10 @@ const updateHeatmap = (metric) => {
 function buildSVGText (regions=[]) {
     svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(10%, -1%, 0px);"><g id="all-cc">';
     if (regions.length == 0){
+        let regionIndex = 0
         allRegionsSVGs.forEach((r)=>{
             for(let n in r){
+                nuts2lookup[n]['nuts1'] = allRegionsNames[regionIndex];
                 let id = replaceAll(n," ", "");
                 id = replaceAll(id, ",", "");
                 id = replaceAll(id, "-", "");
@@ -241,6 +244,7 @@ function buildSVGText (regions=[]) {
                 }
                 svgText += newAtt;
             }
+            regionIndex++;
         });
     }
 
@@ -252,7 +256,7 @@ const onMapHover = (el) => {
    $('.highlighted-area').removeClass('highlighted-area');
    $(el).addClass('highlighted-area');
    let name = $(el).attr('name');
-   console.log(nuts2lookup[name]);
+   $('#detail-text').html(`"<p><strong>${name}</strong></p><br/><ul><li><strong>Overall Rank: </strong>${nuts2lookup[name]['overall']}</li><li><strong>Skills Rank: </strong>${nuts2lookup[name]['skills']}</li><li><strong>Adoption Rank: </strong>${nuts2lookup[name]['adoption']}</li><li><strong>Infrastructure Rank: </strong>${nuts2lookup[name]['infra']}</li><li><strong>Finance & Investment Rank: </strong>${nuts2lookup[name]['finance']}</li><li><strong>Rsearch & Development Rank: </strong>${nuts2lookup[name]['research']}</li><li><strong>Trade Rank: </strong>${nuts2lookup[name]['trade']}</li></ul>"`)
 }
 
 function resetZoom() {
