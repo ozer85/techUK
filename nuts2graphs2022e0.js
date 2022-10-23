@@ -248,10 +248,6 @@ function buildSVGText (regions=[]) {
     return svgText
 }
 
-function generateMap (svgText = buildSVGText()){
-    $('#heatmap-cc').append(svgText);
-}
-
 function setCTM(element, matrix) {
     var m = matrix;
     var s = "matrix(" + m.a + "," + m.b + "," + m.c + "," + m.d + "," + m.e + "," + m.f + ")";
@@ -259,26 +255,32 @@ function setCTM(element, matrix) {
     element.setAttributeNS(null, "transform", s);
 }
 
-var zoomScale = 1;
+function generateMap (svgText = buildSVGText()){
+    $('#heatmap-cc').append(svgText);
+    setTimeout(() => {
+        var svgEl = document.getElementById('cc-heatmap-svg');
+        svgEl.addEventListener('wheel', function(e) {
+        //$('#cc-heatmap-svg').scroll(function(e) {
+            console.log("scrolling...")
+            var delta = e.wheelDeltaY;
+            var zoomScale = Math.pow(1.1, delta/360);
+            
+            var p = svgEl.createSVGPoint();
+            p.x = e.clientX;
+            p.y = e.clientY;
+            
+            p = p.matrixTransform( svgEl.getCTM().inverse() );
+            
+            var zoomMat = svgEl.createSVGMatrix()
+                    .translate(p.x, p.y)
+                    .scale(zoomScale)
+                    .translate(-p.x, -p.y);
+            
+            setCTM(svgEl, svgEl.getCTM().multiply(zoomMat));
+        });
+      }, 1000)
+}
 
-$('#cc-heatmap-svg').scroll(function(e) {
-    console.log("scrolling...")
-    var delta = e.wheelDeltaY;
-    zoomScale = Math.pow(1.1, delta/360);
-    
-    var p = svgEl.createSVGPoint();
-    p.x = e.clientX;
-    p.y = e.clientY;
-    
-    p = p.matrixTransform( svgEl.getCTM().inverse() );
-    
-    var zoomMat = svgEl.createSVGMatrix()
-            .translate(p.x, p.y)
-            .scale(zoomScale)
-            .translate(-p.x, -p.y);
-    
-    setCTM(svgEl, svgEl.getCTM().multiply(zoomMat));
-});
 
 function updateMainPanel() {		
     let all_data_cc = selectedLevel == 2 ? nuts2data : nuts1data;
