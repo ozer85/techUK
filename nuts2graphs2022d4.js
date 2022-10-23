@@ -203,11 +203,22 @@ function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
 
+let selectedMetric = 'overall'
+
 const updateHeatmap = (metric) => {
+    if (selectedMetric == metric) {
+        selectedMetric = 'overall';
+        $('#' + metric).removeClass('filter-selected');
+        $('#overall').addClass('filter-selected');
+    } else {
+        $('#' + selectedMetric).removeClass('filter-selected');
+        $('#' + metric).addClass('filter-selected');
+        selectedMetric = metric;
+    }
     for (const key in nuts2lookup) {
-        const opac = getOpacity(nuts2lookup[key][metric]);
+        const opac = getOpacity(nuts2lookup[key][selectedMetric]);
         const regionId = "#" + nuts2lookup[key].region;
-        $(regionId).css("fill", colourMap[metric]);
+        $(regionId).css("fill", colourMap[selectedMetric]);
         $(regionId).attr("opacity", opac + "%"); 
     }
 }
