@@ -101,7 +101,6 @@ var all_data = [ {region:"#heatmap-em", overallRank:8,"#skills-spider":10,"#adop
 			{axis: "Northern Ireland", value: 9}
 		]]
 
-
 		var selectedRegions = []
 		var selectedMetrics = []
 

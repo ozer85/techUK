@@ -301,42 +301,8 @@ function generateMap (svgText = buildSVGText()){
       }, 1000)
 }
 
-
-function updateMainPanel() {		
-    let all_data_cc = selectedLevel == 2 ? nuts2data : nuts1data;
-    if (selectedRegionsCC.length == 0){
-        data = all_data_cc;
-    } else {
-        data = []
-        all_data_cc.forEach(function(r){
-            if (selectedRegionsCC.includes(r.region)) {
-                data.push(r);
-            }
-        })
-    }
-    data = calculateFilteredRanks(data)
-    html = ""
-    for (let i = 0; i < data.length; i++){
-        html += `<li>${i+1}: ${data[i].region}</li>`
-    }
-    //$('#test-list').html(html)
-    buildDatatableCC(data)
-
-}
-
 const sleep = (time) => {
     return new Promise((resolve) => setTimeout(resolve, time))
-}
-
-
-const zoomToLocation = async (x,y,z) =>{
-    x = $('#heatmap-svg').width();
-    y = $('#heatmap-svg').height();
-    for (let i=0; i < 500; i+=5){
-        $('#heatmap-svg').attr("width", x + i);
-        $('#heatmap-svg').attr("height", y + i);
-        await sleep(1);
-    }
 }
 
 
