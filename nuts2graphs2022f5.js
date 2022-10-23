@@ -251,7 +251,8 @@ function buildSVGText (regions=[]) {
 const onMapHover = (el) => {
    $('.highlighted-area').removeClass('highlighted-area');
    $(el).addClass('highlighted-area');
-   console.log(el.name);
+   let name = $(el).attr('name');
+   console.log(nuts2lookup[name]);
 }
 
 function resetZoom() {
