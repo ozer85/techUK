@@ -251,7 +251,7 @@ function buildSVGText (regions=[]) {
 function setCTM(element, matrix) {
     var m = matrix;
     var s = "matrix(" + m.a + "," + m.b + "," + m.c + "," + m.d + "," + m.e + "," + m.f + ")";
-    console.log(element);
+    console.log(s);
     
     element.setAttributeNS(null, "transform", s);
 }
@@ -262,6 +262,7 @@ function generateMap (svgText = buildSVGText()){
         var containerEl = document.getElementById('cc-heatmap-svg');
         var svgEl = document.getElementById('all-cc');
         containerEl.addEventListener('wheel', function(e) {
+            e.preventDefault();
             var delta = e.wheelDeltaY;
             var zoomScale = Math.pow(5.1, delta/360);
             
