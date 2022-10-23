@@ -194,8 +194,8 @@ function buildDatatableCC(data) {
 }
 
 
-function getOpacity (regionName, metric){
-    const opac = 100 - (nuts2lookup[regionName][metric] * 2);
+function getOpacity (data){
+    const opac = 100 - (data * 2);
     return opac
 }
 
@@ -205,8 +205,7 @@ function replaceAll(str, find, replace) {
 
 const updateHeatmap = (metric) => {
     for (const key in nuts2lookup) {
-        const opac = getOpacity(key, nuts2lookup[key][metric]);
-        console.log(nuts2lookup[key][metric]);
+        const opac = getOpacity(nuts2lookup[key][metric]);
         const regionId = "#" + nuts2lookup[key].region;
         $(regionId).css("fill", colourMap[metric]);
         $(regionId).attr("opacity", opac + "%"); 
@@ -222,7 +221,7 @@ function buildSVGText (regions=[]) {
                 id = replaceAll(id, ",", "");
                 id = replaceAll(id, "-", "");
                 id = replaceAll(id, "/", "");
-                const opac = getOpacity(n, 'overall');
+                const opac = getOpacity(nuts2lookup[n].overall);
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
                     newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="${id}">`);
