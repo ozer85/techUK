@@ -224,7 +224,7 @@ const updateHeatmap = (metric) => {
 }
 
 function buildSVGText (regions=[]) {
-    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 700 600" style="transform: translate3d(10%, -1%, 0px);">';
+    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="700" height="600" stroke="#000" fill="#fff" stroke-width=".98" xmlns:v="https://vecta.io/nano" viewBox="0 0 700 600" style="transform: translate3d(10%, -1%, 0px);"><g id="all-cc">';
     if (regions.length == 0){
         allRegionsSVGs.forEach((r)=>{
             for(let n in r){
@@ -244,7 +244,7 @@ function buildSVGText (regions=[]) {
         });
     }
 
-    svgText += '</svg>';
+    svgText += '</g></svg>';
     return svgText
 }
 
@@ -258,24 +258,24 @@ function setCTM(element, matrix) {
 function generateMap (svgText = buildSVGText()){
     $('#heatmap-cc').append(svgText);
     setTimeout(() => {
-        var containerEl = document.getElementById('heatmap-cc');
-        var svgEl = document.getElementById('cc-heatmap-svg');
-        svgEl.addEventListener('wheel', function(e) {
+        var containerEl = document.getElementById('cc-heatmap-svg');
+        var svgEl = document.getElementById('all-cc');
+        containerEl.addEventListener('wheel', function(e) {
             var delta = e.wheelDeltaY;
             var zoomScale = Math.pow(1.1, delta/360);
             
-            var p = svgEl.createSVGPoint();
+            var p = containerEl.createSVGPoint();
             p.x = e.clientX;
             p.y = e.clientY;
             
-            p = p.matrixTransform( svgEl.getCTM().inverse() );
+            p = p.matrixTransform( containerEl.getCTM().inverse() );
             console.log(p);
-            var zoomMat = svgEl.createSVGMatrix()
+            var zoomMat = containerEl.createSVGMatrix()
                     .translate(p.x, p.y)
                     .scale(zoomScale)
                     .translate(-p.x, -p.y);
             
-            setCTM(svgEl, containerEl.getCTM().multiply(zoomMat));
+            setCTM(containerEl, svgEl.getCTM().multiply(zoomMat));
         });
       }, 1000)
 }
