@@ -713,7 +713,7 @@ const updateHeatmap = (metric) => {
 }
 
 function buildSVGText (regions=[]) {
-    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="600" height="600" stroke="#000" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(15%, -1%, 0px); transform: rotate3d(1, 0, -0, -20deg);"><g id="all-cc">';
+    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="600" height="600" stroke="#000" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(20%, -1%, 0px); transform="rotate(20 300 300)""><g id="all-cc">';
     if (regions.length == 0){
         let regionIndex = 0
         allRegionsSVGs.forEach((r)=>{
