@@ -72,62 +72,550 @@ const Ssvgs = {
 }
 
 const nuts2data = [
-    {region: 'Bedfordshire and Hertfordshire', overallRank:14, "skillsRank":22, "adoptionRank":12, "infrastructureRank":17, "financeRank":20, "researchRank":9, "tradeRank":12},
-    {region: 'Berkshire, Buckinghamshire and Oxfordshire', overallRank:2, "skillsRank":7, "adoptionRank":1, "infrastructureRank":23, "financeRank":3, "researchRank":1, "tradeRank":5},
-    {region: 'Cheshire', overallRank:20, "skillsRank":36, "adoptionRank":14, "infrastructureRank":27, "financeRank":17, "researchRank":11, "tradeRank":8},
-    {region: 'Cornwall and Isles of Scilly', overallRank:39, "skillsRank":33, "adoptionRank":37, "infrastructureRank":38, "financeRank":28, "researchRank":40, "tradeRank":41},
-    {region: 'Cumbria', overallRank:38, "skillsRank":37, "adoptionRank":41, "infrastructureRank":40, "financeRank":27, "researchRank":31, "tradeRank":31},
-    {region: 'Derbyshire and Nottinghamshire', overallRank:8, "skillsRank":28, "adoptionRank":16, "infrastructureRank":16, "financeRank":11, "researchRank":6, "tradeRank":11},
-    {region: 'Devon', overallRank:31, "skillsRank":25, "adoptionRank":33, "infrastructureRank":30, "financeRank":30, "researchRank":28, "tradeRank":37},
-    {region: 'Dorset and Somerset', overallRank:35, "skillsRank":13, "adoptionRank":27, "infrastructureRank":34, "financeRank":40, "researchRank":34, "tradeRank":33},
-    {region: 'East Anglia', overallRank:7, "skillsRank":26, "adoptionRank":13, "infrastructureRank":37, "financeRank":7, "researchRank":3, "tradeRank":13},
-    {region: 'East Wales', overallRank:22, "skillsRank":15, "adoptionRank":22, "infrastructureRank":25, "financeRank":15, "researchRank":18, "tradeRank":17},
-    {region: 'East Yorkshire and Northern Lincolnshire', overallRank:34, "skillsRank":38, "adoptionRank":39, "infrastructureRank":14, "financeRank":36, "researchRank":36, "tradeRank":23},
-    {region: 'Eastern Scotland', overallRank:11, "skillsRank":6, "adoptionRank":10, "infrastructureRank":12, "financeRank":14, "researchRank":15, "tradeRank":7},
-    {region: 'Essex', overallRank:25, "skillsRank":12, "adoptionRank":20, "infrastructureRank":24, "financeRank":22, "researchRank":21, "tradeRank":32},
-    {region: 'Gloucestershire, Wiltshire and Bath/Bristol area', overallRank:5, "skillsRank":8, "adoptionRank":11, "infrastructureRank":20, "financeRank":8, "researchRank":5, "tradeRank":18},
-    {region: 'Greater Manchester', overallRank:21, "skillsRank":19, "adoptionRank":17, "infrastructureRank":8, "financeRank":10, "researchRank":25, "tradeRank":28},
-    {region: 'Hampshire and Isle of Wight', overallRank:9, "skillsRank":10, "adoptionRank":6, "infrastructureRank":13, "financeRank":6, "researchRank":12, "tradeRank":6},
-    {region: 'Herefordshire, Worcestershire and Warwickshire', overallRank:6, "skillsRank":16, "adoptionRank":18, "infrastructureRank":28, "financeRank":18, "researchRank":2, "tradeRank":27},
-    {region: 'Highlands and Islands', overallRank:41, "skillsRank":24, "adoptionRank":38, "infrastructureRank":41, "financeRank":13, "researchRank":37, "tradeRank":16},
-    {region: 'Inner London - East', overallRank:3, "skillsRank":4, "adoptionRank":2, "infrastructureRank":1, "financeRank":2, "researchRank":16, "tradeRank":3},
-    {region: 'Inner London - West', overallRank:1, "skillsRank":31, "adoptionRank":7, "infrastructureRank":2, "financeRank":1, "researchRank":4, "tradeRank":1},
-    {region: 'Kent', overallRank:29, "skillsRank":14, "adoptionRank":31, "infrastructureRank":29, "financeRank":23, "researchRank":27, "tradeRank":36},
-    {region: 'Lancashire', overallRank:30, "skillsRank":17, "adoptionRank":29, "infrastructureRank":22, "financeRank":25, "researchRank":33, "tradeRank":15},
-    {region: 'Leicestershire, Rutland and Northamptonshire', overallRank:23, "skillsRank":18, "adoptionRank":19, "infrastructureRank":18, "financeRank":26, "researchRank":20, "tradeRank":30},
-    {region: 'Lincolnshire', overallRank:40, "skillsRank":41, "adoptionRank":40, "infrastructureRank":39, "financeRank":34, "researchRank":35, "tradeRank":40},
-    {region: 'Merseyside', overallRank:28, "skillsRank":39, "adoptionRank":26, "infrastructureRank":9, "financeRank":29, "researchRank":26, "tradeRank":25},
-    {region: 'North Eastern Scotland', overallRank:17, "skillsRank":9, "adoptionRank":3, "infrastructureRank":31, "financeRank":12, "researchRank":23, "tradeRank":2},
-    {region: 'North Yorkshire', overallRank:16, "skillsRank":21, "adoptionRank":21, "infrastructureRank":35, "financeRank":5, "researchRank":10, "tradeRank":38},
-    {region: 'Northern Ireland', overallRank:32, "skillsRank":34, "adoptionRank":34, "infrastructureRank":33, "financeRank":31, "researchRank":24, "tradeRank":24},
-    {region: 'Northumberland and Tyne and Wear', overallRank:24, "skillsRank":32, "adoptionRank":25, "infrastructureRank":10, "financeRank":19, "researchRank":22, "tradeRank":21},
-    {region: 'Outer London - East and North East', overallRank:18, "skillsRank":2, "adoptionRank":8, "infrastructureRank":4, "financeRank":33, "researchRank":39, "tradeRank":39},
-    {region: 'Outer London - South', overallRank:13, "skillsRank":1, "adoptionRank":5, "infrastructureRank":5, "financeRank":16, "researchRank":38, "tradeRank":34},
-    {region: 'Outer London - West and North West', overallRank:4, "skillsRank":3, "adoptionRank":4, "infrastructureRank":3, "financeRank":4, "researchRank":17, "tradeRank":4},
-    {region: 'Shropshire and Staffordshire', overallRank:33, "skillsRank":35, "adoptionRank":23, "infrastructureRank":32, "financeRank":37, "researchRank":30, "tradeRank":26},
-    {region: 'South Yorkshire', overallRank:19, "skillsRank":27, "adoptionRank":32, "infrastructureRank":15, "financeRank":35, "researchRank":8, "tradeRank":35},
-    {region: 'Southern Scotland', overallRank:37, "skillsRank":30, "adoptionRank":35, "infrastructureRank":26, "financeRank":41, "researchRank":41, "tradeRank":22},
-    {region: 'Surrey, East and West Sussex', overallRank:12, "skillsRank":5, "adoptionRank":9, "infrastructureRank":19, "financeRank":9, "researchRank":19, "tradeRank":9},
-    {region: 'Tees Valley and Durham', overallRank:26, "skillsRank":40, "adoptionRank":30, "infrastructureRank":21, "financeRank":39, "researchRank":14, "tradeRank":10},
-    {region: 'West Central Scotland', overallRank:15, "skillsRank":11, "adoptionRank":15, "infrastructureRank":6, "financeRank":24, "researchRank":13, "tradeRank":14},
-    {region: 'West Midlands', overallRank:10, "skillsRank":20, "adoptionRank":24, "infrastructureRank":7, "financeRank":32, "researchRank":7, "tradeRank":19},
-    {region: 'West Wales and The Valleys', overallRank:36, "skillsRank":23, "adoptionRank":36, "infrastructureRank":36, "financeRank":38, "researchRank":32, "tradeRank":20},
-    {region: 'West Yorkshire', overallRank:27, "skillsRank":28, "adoptionRank":28, "infrastructureRank":11, "financeRank":21, "researchRank":29, "tradeRank":29}
+    {
+        "region": "Bedfordshire and Hertfordshire",
+        "overallRank": 12,
+        "skillsRank": 22,
+        "adoptionRank": 10,
+        "infrastructureRank": 12,
+        "financeRank": 22,
+        "researchRank": 9,
+        "tradeRank": 15
+    },
+    {
+        "region": "Berkshire, Buckinghamshire and Oxfordshire",
+        "overallRank": 2,
+        "skillsRank": 6,
+        "adoptionRank": 1,
+        "infrastructureRank": 20,
+        "financeRank": 2,
+        "researchRank": 1,
+        "tradeRank": 6
+    },
+    {
+        "region": "Cheshire",
+        "overallRank": 19,
+        "skillsRank": 33,
+        "adoptionRank": 15,
+        "infrastructureRank": 29,
+        "financeRank": 12,
+        "researchRank": 11,
+        "tradeRank": 12
+    },
+    {
+        "region": "Cornwall and Isles of Scilly",
+        "overallRank": 40,
+        "skillsRank": 36,
+        "adoptionRank": 39,
+        "infrastructureRank": 40,
+        "financeRank": 32,
+        "researchRank": 40,
+        "tradeRank": 40
+    },
+    {
+        "region": "Cumbria",
+        "overallRank": 38,
+        "skillsRank": 35,
+        "adoptionRank": 41,
+        "infrastructureRank": 39,
+        "financeRank": 20,
+        "researchRank": 30,
+        "tradeRank": 34
+    },
+    {
+        "region": "Derbyshire and Nottinghamshire",
+        "overallRank": 6,
+        "skillsRank": 25,
+        "adoptionRank": 17,
+        "infrastructureRank": 16,
+        "financeRank": 5,
+        "researchRank": 6,
+        "tradeRank": 37
+    },
+    {
+        "region": "Devon",
+        "overallRank": 33,
+        "skillsRank": 26,
+        "adoptionRank": 36,
+        "infrastructureRank": 31,
+        "financeRank": 25,
+        "researchRank": 28,
+        "tradeRank": 36
+    },
+    {
+        "region": "Dorset and Somerset",
+        "overallRank": 31,
+        "skillsRank": 11,
+        "adoptionRank": 28,
+        "infrastructureRank": 30,
+        "financeRank": 28,
+        "researchRank": 34,
+        "tradeRank": 28
+    },
+    {
+        "region": "East Anglia",
+        "overallRank": 8,
+        "skillsRank": 24,
+        "adoptionRank": 14,
+        "infrastructureRank": 36,
+        "financeRank": 11,
+        "researchRank": 2,
+        "tradeRank": 11
+    },
+    {
+        "region": "East Wales",
+        "overallRank": 24,
+        "skillsRank": 17,
+        "adoptionRank": 16,
+        "infrastructureRank": 28,
+        "financeRank": 21,
+        "researchRank": 20,
+        "tradeRank": 21
+    },
+    {
+        "region": "East Yorkshire and Northern Lincolnshire",
+        "overallRank": 35,
+        "skillsRank": 39,
+        "adoptionRank": 38,
+        "infrastructureRank": 14,
+        "financeRank": 34,
+        "researchRank": 36,
+        "tradeRank": 39
+    },
+    {
+        "region": "Eastern Scotland",
+        "overallRank": 13,
+        "skillsRank": 9,
+        "adoptionRank": 11,
+        "infrastructureRank": 17,
+        "financeRank": 8,
+        "researchRank": 15,
+        "tradeRank": 9
+    },
+    {
+        "region": "Essex",
+        "overallRank": 25,
+        "skillsRank": 12,
+        "adoptionRank": 23,
+        "infrastructureRank": 18,
+        "financeRank": 30,
+        "researchRank": 21,
+        "tradeRank": 27
+    },
+    {
+        "region": "Gloucestershire, Wiltshire and Bath/Bristol area",
+        "overallRank": 5,
+        "skillsRank": 8,
+        "adoptionRank": 12,
+        "infrastructureRank": 22,
+        "financeRank": 6,
+        "researchRank": 5,
+        "tradeRank": 16
+    },
+    {
+        "region": "Greater Manchester",
+        "overallRank": 21,
+        "skillsRank": 20,
+        "adoptionRank": 20,
+        "infrastructureRank": 7,
+        "financeRank": 15,
+        "researchRank": 26,
+        "tradeRank": 17
+    },
+    {
+        "region": "Hampshire and Isle of Wight",
+        "overallRank": 10,
+        "skillsRank": 10,
+        "adoptionRank": 8,
+        "infrastructureRank": 19,
+        "financeRank": 7,
+        "researchRank": 12,
+        "tradeRank": 7
+    },
+    {
+        "region": "Herefordshire, Worcestershire and Warwickshire",
+        "overallRank": 7,
+        "skillsRank": 15,
+        "adoptionRank": 13,
+        "infrastructureRank": 26,
+        "financeRank": 23,
+        "researchRank": 3,
+        "tradeRank": 33
+    },
+    {
+        "region": "Highlands and Islands",
+        "overallRank": 41,
+        "skillsRank": 23,
+        "adoptionRank": 37,
+        "infrastructureRank": 41,
+        "financeRank": 36,
+        "researchRank": 37,
+        "tradeRank": 14
+    },
+    {
+        "region": "Inner London - East",
+        "overallRank": 3,
+        "skillsRank": 4,
+        "adoptionRank": 2,
+        "infrastructureRank": 2,
+        "financeRank": 3,
+        "researchRank": 16,
+        "tradeRank": 2
+    },
+    {
+        "region": "Inner London - West",
+        "overallRank": 1,
+        "skillsRank": 29,
+        "adoptionRank": 6,
+        "infrastructureRank": 4,
+        "financeRank": 1,
+        "researchRank": 4,
+        "tradeRank": 1
+    },
+    {
+        "region": "Kent",
+        "overallRank": 29,
+        "skillsRank": 13,
+        "adoptionRank": 34,
+        "infrastructureRank": 24,
+        "financeRank": 29,
+        "researchRank": 27,
+        "tradeRank": 31
+    },
+    {
+        "region": "Lancashire",
+        "overallRank": 30,
+        "skillsRank": 14,
+        "adoptionRank": 29,
+        "infrastructureRank": 25,
+        "financeRank": 24,
+        "researchRank": 32,
+        "tradeRank": 13
+    },
+    {
+        "region": "Leicestershire, Rutland and Northamptonshire",
+        "overallRank": 22,
+        "skillsRank": 18,
+        "adoptionRank": 24,
+        "infrastructureRank": 15,
+        "financeRank": 31,
+        "researchRank": 18,
+        "tradeRank": 30
+    },
+    {
+        "region": "Lincolnshire",
+        "overallRank": 36,
+        "skillsRank": 41,
+        "adoptionRank": 40,
+        "infrastructureRank": 35,
+        "financeRank": 26,
+        "researchRank": 35,
+        "tradeRank": 41
+    },
+    {
+        "region": "Merseyside",
+        "overallRank": 26,
+        "skillsRank": 38,
+        "adoptionRank": 27,
+        "infrastructureRank": 9,
+        "financeRank": 14,
+        "researchRank": 25,
+        "tradeRank": 22
+    },
+    {
+        "region": "North Eastern Scotland",
+        "overallRank": 20,
+        "skillsRank": 7,
+        "adoptionRank": 3,
+        "infrastructureRank": 33,
+        "financeRank": 16,
+        "researchRank": 23,
+        "tradeRank": 5
+    },
+    {
+        "region": "North Yorkshire",
+        "overallRank": 18,
+        "skillsRank": 21,
+        "adoptionRank": 18,
+        "infrastructureRank": 37,
+        "financeRank": 9,
+        "researchRank": 10,
+        "tradeRank": 26
+    },
+    {
+        "region": "Northern Ireland",
+        "overallRank": 32,
+        "skillsRank": 34,
+        "adoptionRank": 32,
+        "infrastructureRank": 32,
+        "financeRank": 33,
+        "researchRank": 24,
+        "tradeRank": 3
+    },
+    {
+        "region": "Northumberland and Tyne and Wear",
+        "overallRank": 23,
+        "skillsRank": 32,
+        "adoptionRank": 26,
+        "infrastructureRank": 11,
+        "financeRank": 18,
+        "researchRank": 22,
+        "tradeRank": 25
+    },
+    {
+        "region": "Outer London - East and North East",
+        "overallRank": 17,
+        "skillsRank": 2,
+        "adoptionRank": 9,
+        "infrastructureRank": 1,
+        "financeRank": 35,
+        "researchRank": 39,
+        "tradeRank": 38
+    },
+    {
+        "region": "Outer London - South",
+        "overallRank": 11,
+        "skillsRank": 1,
+        "adoptionRank": 5,
+        "infrastructureRank": 3,
+        "financeRank": 13,
+        "researchRank": 38,
+        "tradeRank": 19
+    },
+    {
+        "region": "Outer London - West and North West",
+        "overallRank": 4,
+        "skillsRank": 3,
+        "adoptionRank": 4,
+        "infrastructureRank": 5,
+        "financeRank": 4,
+        "researchRank": 17,
+        "tradeRank": 4
+    },
+    {
+        "region": "Shropshire and Staffordshire",
+        "overallRank": 34,
+        "skillsRank": 37,
+        "adoptionRank": 21,
+        "infrastructureRank": 27,
+        "financeRank": 39,
+        "researchRank": 31,
+        "tradeRank": 32
+    },
+    {
+        "region": "South Yorkshire",
+        "overallRank": 16,
+        "skillsRank": 31,
+        "adoptionRank": 30,
+        "infrastructureRank": 13,
+        "financeRank": 37,
+        "researchRank": 8,
+        "tradeRank": 35
+    },
+    {
+        "region": "Southern Scotland",
+        "overallRank": 39,
+        "skillsRank": 27,
+        "adoptionRank": 35,
+        "infrastructureRank": 34,
+        "financeRank": 41,
+        "researchRank": 41,
+        "tradeRank": 24
+    },
+    {
+        "region": "Surrey, East and West Sussex",
+        "overallRank": 14,
+        "skillsRank": 5,
+        "adoptionRank": 7,
+        "infrastructureRank": 23,
+        "financeRank": 10,
+        "researchRank": 19,
+        "tradeRank": 8
+    },
+    {
+        "region": "Tees Valley and Durham",
+        "overallRank": 28,
+        "skillsRank": 40,
+        "adoptionRank": 33,
+        "infrastructureRank": 21,
+        "financeRank": 40,
+        "researchRank": 14,
+        "tradeRank": 18
+    },
+    {
+        "region": "West Central Scotland",
+        "overallRank": 15,
+        "skillsRank": 16,
+        "adoptionRank": 19,
+        "infrastructureRank": 10,
+        "financeRank": 19,
+        "researchRank": 13,
+        "tradeRank": 10
+    },
+    {
+        "region": "West Midlands",
+        "overallRank": 9,
+        "skillsRank": 19,
+        "adoptionRank": 22,
+        "infrastructureRank": 6,
+        "financeRank": 27,
+        "researchRank": 7,
+        "tradeRank": 23
+    },
+    {
+        "region": "West Wales and The Valleys",
+        "overallRank": 37,
+        "skillsRank": 28,
+        "adoptionRank": 31,
+        "infrastructureRank": 38,
+        "financeRank": 38,
+        "researchRank": 33,
+        "tradeRank": 29
+    },
+    {
+        "region": "West Yorkshire",
+        "overallRank": 27,
+        "skillsRank": 30,
+        "adoptionRank": 25,
+        "infrastructureRank": 8,
+        "financeRank": 17,
+        "researchRank": 29,
+        "tradeRank": 20
+    }
 ]
 
 const nuts1data = [
-    {region: 'East Midlands', overallRank:8, "skillsRank":10, "adoptionRank":8, "infrastructureRank":8, "financeRank":7, "researchRank":5, "tradeRank":9},
-    {region: 'East of England', overallRank:3, "skillsRank":31, "adoptionRank":4, "infrastructureRank":9, "financeRank":6, "researchRank":2, "tradeRank":4},
-    {region: 'Greater London', overallRank:1, "skillsRank":1, "adoptionRank":1, "infrastructureRank":1, "financeRank":1, "researchRank":1, "tradeRank":1},
-    {region: 'North East', overallRank:10, "skillsRank":11, "adoptionRank":9, "infrastructureRank":2, "financeRank":11, "researchRank":10, "tradeRank":5},
-    {region: 'North West', overallRank:7, "skillsRank":5, "adoptionRank":6, "infrastructureRank":4, "financeRank":4, "researchRank":9, "tradeRank":7},
-    {region: 'Northern Ireland', overallRank:11, "skillsRank":12, "adoptionRank":12, "infrastructureRank":12, "financeRank":9, "researchRank":7, "tradeRank":12},
-    {region: 'Scotland', overallRank:6, "skillsRank":6, "adoptionRank":3, "infrastructureRank":6, "financeRank":7, "researchRank":8, "tradeRank":2},
-    {region: 'South East', overallRank:2, "skillsRank":4, "adoptionRank":2, "infrastructureRank":7, "financeRank":8, "researchRank":3, "tradeRank":3},
-    {region: 'South West', overallRank:4, "skillsRank":2, "adoptionRank":5, "infrastructureRank":10, "financeRank":3, "researchRank":6, "tradeRank":10},
-    {region: 'Wales', overallRank:12, "skillsRank":8, "adoptionRank":11, "infrastructureRank":11, "financeRank":12, "researchRank":12, "tradeRank":6},
-    {region: 'West Midlands', overallRank:5, "skillsRank":7, "adoptionRank":7, "infrastructureRank":3, "financeRank":10, "researchRank":4, "tradeRank":8},
-    {region: 'Yorkshire & the Humber', overallRank:9, "skillsRank":9, "adoptionRank":10, "infrastructureRank":5, "financeRank":8, "researchRank":11, "tradeRank":11}
+    {
+        "region": "East Midlands",
+        "overallRank": 8,
+        "skillsRank": 9,
+        "adoptionRank": 8,
+        "infrastructureRank": 6,
+        "financeRank": 7,
+        "researchRank": 8,
+        "tradeRank": 9,
+        "ecosystemRank": 9
+    },
+    {
+        "region": "East of England",
+        "overallRank": 3,
+        "skillsRank": 5,
+        "adoptionRank": 3,
+        "infrastructureRank": 8,
+        "financeRank": 8,
+        "researchRank": 2,
+        "tradeRank": 3,
+        "ecosystemRank": 6
+    },
+    {
+        "region": "Greater London",
+        "overallRank": 1,
+        "skillsRank": 1,
+        "adoptionRank": 1,
+        "infrastructureRank": 1,
+        "financeRank": 1,
+        "researchRank": 1,
+        "tradeRank": 1,
+        "ecosystemRank": 1
+    },
+    {
+        "region": "North East",
+        "overallRank": 9,
+        "skillsRank": 8,
+        "adoptionRank": 10,
+        "infrastructureRank": 5,
+        "financeRank": 3,
+        "researchRank": 9,
+        "tradeRank": 8,
+        "ecosystemRank": 5
+    },
+    {
+        "region": "North West",
+        "overallRank": 6,
+        "skillsRank": 11,
+        "adoptionRank": 7,
+        "infrastructureRank": 4,
+        "financeRank": 10,
+        "researchRank": 6,
+        "tradeRank": 6,
+        "ecosystemRank": 7
+    },
+    {
+        "region": "Northern Ireland",
+        "overallRank": 12,
+        "skillsRank": 12,
+        "adoptionRank": 12,
+        "infrastructureRank": 11,
+        "financeRank": 6,
+        "researchRank": 12,
+        "tradeRank": 12,
+        "ecosystemRank": 12
+    },
+    {
+        "region": "Scotland",
+        "overallRank": 5,
+        "skillsRank": 6,
+        "adoptionRank": 4,
+        "infrastructureRank": 9,
+        "financeRank": 9,
+        "researchRank": 4,
+        "tradeRank": 2,
+        "ecosystemRank": 10
+    },
+    {
+        "region": "South East",
+        "overallRank": 2,
+        "skillsRank": 3,
+        "adoptionRank": 2,
+        "infrastructureRank": 7,
+        "financeRank": 2,
+        "researchRank": 3,
+        "tradeRank": 5,
+        "ecosystemRank": 2
+    },
+    {
+        "region": "South West",
+        "overallRank": 7,
+        "skillsRank": 4,
+        "adoptionRank": 5,
+        "infrastructureRank": 10,
+        "financeRank": 4,
+        "researchRank": 7,
+        "tradeRank": 10,
+        "ecosystemRank": 8
+    },
+    {
+        "region": "Wales",
+        "overallRank": 11,
+        "skillsRank": 2,
+        "adoptionRank": 11,
+        "infrastructureRank": 12,
+        "financeRank": 5,
+        "researchRank": 10,
+        "tradeRank": 4,
+        "ecosystemRank": 11
+    },
+    {
+        "region": "West Midlands",
+        "overallRank": 4,
+        "skillsRank": 7,
+        "adoptionRank": 6,
+        "infrastructureRank": 2,
+        "financeRank": 12,
+        "researchRank": 5,
+        "tradeRank": 7,
+        "ecosystemRank": 4
+    },
+    {
+        "region": "Yorkshire & the Humber",
+        "overallRank": 9,
+        "skillsRank": 9,
+        "adoptionRank": 10,
+        "infrastructureRank": 5,
+        "financeRank": 8,
+        "researchRank": 11,
+        "tradeRank": 11
+    }
 ]
 
 let nuts2lookup = {}
@@ -225,7 +713,7 @@ const updateHeatmap = (metric) => {
 }
 
 function buildSVGText (regions=[]) {
-    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="600" height="600" stroke="#000" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(15%, -1%, 0px); transform: rotate3d(1, 0, -0, -15deg);"><g id="all-cc">';
+    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="600" height="600" stroke="#000" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(15%, -1%, 0px); transform: rotate3d(1, 0, -0, -20deg);"><g id="all-cc">';
     if (regions.length == 0){
         let regionIndex = 0
         allRegionsSVGs.forEach((r)=>{
