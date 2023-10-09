@@ -713,7 +713,7 @@ const updateHeatmap = (metric) => {
 }
 
 function buildSVGText (regions=[]) {
-    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="600" height="600" stroke="#fff" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(25%, -1%, 0px) scale(0.75, 1.3)"><g id="all-cc">';
+    svgText = '<svg id="cc-heatmap-svg" xmlns="http://www.w3.org/2000/svg" width="600" height="600" stroke="#fff" fill="#fff" stroke-width=".98" viewBox="0 0 700 600" xmlns:v="https://vecta.io/nano" style="transform: translate3d(25%, -1%, 0px) scale(0.75, 1.25)"><g id="all-cc">';
     if (regions.length == 0){
         let regionIndex = 0
         allRegionsSVGs.forEach((r)=>{
@@ -726,9 +726,9 @@ function buildSVGText (regions=[]) {
                 const opac = getOpacity(nuts2lookup[n].overall);
                 let newAtt = r[n];
                 if (newAtt.includes("<g>")){
-                    newAtt = newAtt.replace("<g>", `<g fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(this)" onmouseout="onMapOut()">`);
+                    newAtt = newAtt.replace("<g>", `<g fill="#007EC5" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(this)" onmouseout="onMapOut()">`);
                 } else {
-                    newAtt = newAtt.replace("<path", `<path fill="#001e37" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(this)" onmouseout="onMapOut()"`);
+                    newAtt = newAtt.replace("<path", `<path fill="#007EC5" opacity="${opac}%" id="${id}" name="${n}" onmouseover="onMapHover(this)" onmouseout="onMapOut()"`);
                 }
                 svgText += newAtt;
             }
