@@ -1,4 +1,4 @@
-let all_data = [
+var all_data = [
   {
     region: "#heatmap-em",
     overallRank: 8,
@@ -144,7 +144,7 @@ let all_data = [
   },
 ];
 
-let skillsSpider = [[
+var skillsSpider = [[
   { axis: "East Midlands", value: 9 },
   { axis: "East of England", value: 5 },
   { axis: "Greater London", value: 1 },
@@ -159,7 +159,7 @@ let skillsSpider = [[
   { axis: "Yorkshire and the Humber", value: 10 },
 ]];
 
-let adoptionSpider = [[
+var adoptionSpider = [[
   { axis: "East Midlands", value: 8 },
   { axis: "East of England", value: 3 },
   { axis: "Greater London", value: 1 },
@@ -174,7 +174,7 @@ let adoptionSpider = [[
   { axis: "Yorkshire and the Humber", value: 9 },
 ]];
 
-let infrastructureSpider = [[
+var infrastructureSpider = [[
   { axis: "East Midlands", value: 6 },
   { axis: "East of England", value: 8 },
   { axis: "Greater London", value: 1 },
@@ -189,7 +189,7 @@ let infrastructureSpider = [[
   { axis: "Yorkshire and the Humber", value: 3 },
 ]];
 
-let researchSpider = [[
+var researchSpider = [[
   { axis: "East Midlands", value: 8 },
   { axis: "East of England", value: 2 },
   { axis: "Greater London", value: 1 },
@@ -204,7 +204,7 @@ let researchSpider = [[
   { axis: "Yorkshire and the Humber", value: 11 },
 ]];
 
-let tradeSpider = [[
+var tradeSpider = [[
   { axis: "East Midlands", value: 9 },
   { axis: "East of England", value: 3 },
   { axis: "Greater London", value: 1 },
@@ -219,7 +219,7 @@ let tradeSpider = [[
   { axis: "Yorkshire and the Humber", value: 11 },
 ]];
 
-let financeSpider = [[
+var financeSpider = [[
   { axis: "East Midlands", value: 7 },
   { axis: "East of England", value: 8 },
   { axis: "Greater London", value: 1 },
@@ -234,7 +234,7 @@ let financeSpider = [[
   { axis: "Yorkshire and the Humber", value: 11 },
 ]];
 
-let ecosystemsSpider = [[
+var ecosystemsSpider = [[
   { axis: "East Midlands", value: 9 },
   { axis: "East of England", value: 6 },
   { axis: "Greater London", value: 1 },
