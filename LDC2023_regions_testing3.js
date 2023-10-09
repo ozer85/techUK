@@ -91,7 +91,8 @@ let all_data = [
 	  "#infra-spider": 7,
 	  "#research-spider": 3,
 	  "#finance-spider": 2,
-	  "#trade-spider": 5,
+	  "#trade-spider": 5,	
+	  "#ecosystems-spider": 2,
 	  name: "South East",
 	},
 	{
