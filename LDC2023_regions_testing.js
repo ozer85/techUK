@@ -174,7 +174,7 @@ var adoptionSpider = [[
   { axis: "Yorkshire and the Humber", value: 9 },
 ]];
 
-var infrastructureSpider = [[
+var InfrastructureSpider = [[
   { axis: "East Midlands", value: 6 },
   { axis: "East of England", value: 8 },
   { axis: "Greater London", value: 1 },
@@ -189,7 +189,7 @@ var infrastructureSpider = [[
   { axis: "Yorkshire and the Humber", value: 3 },
 ]];
 
-var researchSpider = [[
+var ResearchSpider = [[
   { axis: "East Midlands", value: 8 },
   { axis: "East of England", value: 2 },
   { axis: "Greater London", value: 1 },
@@ -204,7 +204,7 @@ var researchSpider = [[
   { axis: "Yorkshire and the Humber", value: 11 },
 ]];
 
-var tradeSpider = [[
+var TradeSpider = [[
   { axis: "East Midlands", value: 9 },
   { axis: "East of England", value: 3 },
   { axis: "Greater London", value: 1 },
@@ -219,7 +219,7 @@ var tradeSpider = [[
   { axis: "Yorkshire and the Humber", value: 11 },
 ]];
 
-var financeSpider = [[
+var FinanceSpider = [[
   { axis: "East Midlands", value: 7 },
   { axis: "East of England", value: 8 },
   { axis: "Greater London", value: 1 },
@@ -234,7 +234,7 @@ var financeSpider = [[
   { axis: "Yorkshire and the Humber", value: 11 },
 ]];
 
-var ecosystemsSpider = [[
+var EcosystemsSpider = [[
   { axis: "East Midlands", value: 9 },
   { axis: "East of England", value: 6 },
   { axis: "Greater London", value: 1 },
