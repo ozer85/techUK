@@ -659,7 +659,7 @@ const allRegionsNames = ["North East", "North West", "Yorkshire & The Humber", "
 
 function buildDatatableCC(data) {
     
-    tableHtml = '<table id="rankings-table-cc" class="table-responsive stripe hover" style="width:100%"><thead><tr><th>Overall Rank</th><th>Region</th><th>Skills Rank</th><th>Adoption Rank</th><th>Infrastructure Rank</th><th>R&D Rank</th><th>F&I Rank</th><th>Trade Rank</th></tr></thead><tbody>';
+    tableHtml = '<table id="rankings-table-cc" class="table-responsive stripe hover" style="width:100%"><thead><tr><th>Overall Rank</th><th>Region</th><th>Skills Rank</th><th>Adoption Rank</th><th>Infrastructure Rank</th><th>F&I Rank</th><th>R&D Rank</th><th>Trade Rank</th></tr></thead><tbody>';
     for (let i = 0; i < data.length; i++){
         tableHtml += `<tr><td>${i + 1}</td><td>${data[i].region}</td>`
         allMetrics.forEach((k)=>{
